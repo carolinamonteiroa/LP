@@ -10,6 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        freelaw: {
+          bg: "#0E0A14",
+          purple: "#7646FF",
+          purpleLight: "#A78BFA",
+          white: "#FFFFFF",
+          textDim: "#C5C3CE",
+        },
         brand: {
           primary: "#6B3C9B",
           secondary: "#A986D1",
@@ -76,6 +83,10 @@ const config: Config = {
         soft: "0 2px 8px rgba(107, 60, 155, 0.08)",
         medium: "0 4px 16px rgba(107, 60, 155, 0.12)",
         strong: "0 8px 24px rgba(107, 60, 155, 0.16)",
+        glow: "0 0 0 2px rgba(118,70,255,0.3), 0 10px 40px rgba(118,70,255,0.35)",
+      },
+      backgroundImage: {
+        heroGradient: "radial-gradient(1000px 600px at 20% -10%, rgba(118,70,255,0.25), transparent), radial-gradient(800px 500px at 90% 10%, rgba(118,70,255,0.15), transparent)",
       },
       spacing: {
         section: "6rem",

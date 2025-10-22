@@ -6,10 +6,10 @@
     "keywords": ["legaltech", "advocacia", "automação jurídica", "escritório de advocacia", "tecnologia jurídica"]
   },
   "hero": {
-    "headline": "Transforme seu escritório em empresa. Cresça sem contratar mais advogados.",
-    "subheadline": "Demonstração exclusiva para {{CLIENTE}}",
-    "description": "Escale sua advocacia sem travar o operacional.",
-    "ctaPrimary": "Começar agora",
+    "headline": "Como transformar seu escritório em uma empresa",
+    "subheadline": "Apresentação exclusiva para {{CLIENTE}}",
+    "description": "Escale sua advocacia sem precisar contratar mais advogados. Delegue, automatize e foque no que realmente importa para clientes.",
+    "ctaPrimary": "Escalar meu Escritório",
     "ctaSecondary": "Ver como funciona",
     "badge": "7+ anos • 100k+ documentos processados"
   },

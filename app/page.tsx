@@ -6,6 +6,7 @@ import { usePresenterMode } from "@/hooks/usePresenterMode"
 import demoContent from "@/content/demo.json"
 
 // Components
+import { Header } from "@/components/Header"
 import { ProgressBar } from "@/components/ProgressBar"
 import { ScrollIndicator } from "@/components/ScrollIndicator"
 import { Minimapa } from "@/components/Minimapa"
@@ -50,6 +51,9 @@ function DemoPageContent() {
 
   return (
     <div className="scroll-container">
+      {/* Header */}
+      <Header />
+
       {/* Progress Bar */}
       <ProgressBar />
 

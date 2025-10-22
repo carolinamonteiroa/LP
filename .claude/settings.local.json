@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /b \"C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\public\")",
+      "Read(//c/Users/carol/Documents/Carol/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
