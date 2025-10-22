@@ -1,0 +1,380 @@
+{
+  "meta": {
+    "title": "Freelaw Premium - Solução Completa para Escritórios de Alto Desempenho",
+    "description": "Plano exclusivo com tecnologia de ponta, consultoria estratégica e suporte VIP para escritórios que querem liderar o mercado jurídico.",
+    "ogImage": "/og-premium.png",
+    "keywords": ["freelaw premium", "plano premium", "escritório jurídico premium", "consultoria jurídica", "tecnologia jurídica avançada"]
+  },
+  "hero": {
+    "badge": "Plano Exclusivo",
+    "headline": "Freelaw Premium",
+    "subheadline": "Para escritórios que não aceitam o comum",
+    "description": "Tecnologia de ponta + Consultoria estratégica + Suporte VIP. Tudo o que você precisa para liderar o mercado jurídico.",
+    "ctaPrimary": "Agendar apresentação Premium",
+    "ctaSecondary": "Ver diferenciais",
+    "highlight": "Apenas 10 vagas disponíveis por trimestre"
+  },
+  "exclusive": {
+    "title": "O que torna o Premium exclusivo",
+    "subtitle": "Benefícios que vão além do básico",
+    "benefits": [
+      {
+        "icon": "crown",
+        "title": "Consultoria Estratégica Mensal",
+        "description": "Sessões individuais com especialistas para otimizar processos, aumentar lucratividade e escalar seu escritório de forma inteligente.",
+        "value": "R$ 3.500/mês de valor"
+      },
+      {
+        "icon": "zap",
+        "title": "SLA Premium: 24h",
+        "description": "Suas peças e minutas entregues em até 24 horas, com prioridade máxima na fila de produção.",
+        "value": "50% mais rápido"
+      },
+      {
+        "icon": "users",
+        "title": "Gerente de Conta Dedicado",
+        "description": "Um profissional exclusivo para entender seu escritório, antecipar necessidades e garantir resultados.",
+        "value": "Relacionamento VIP"
+      },
+      {
+        "icon": "shield",
+        "title": "Revisão Dupla Especializada",
+        "description": "Todas as peças passam por dois revisores especializados na sua área de atuação antes da entrega.",
+        "value": "Qualidade garantida"
+      },
+      {
+        "icon": "brain",
+        "title": "Acesso a IA Jurídica Avançada",
+        "description": "Ferramentas de inteligência artificial exclusivas para pesquisa jurisprudencial, análise de contratos e geração de insights.",
+        "value": "Tecnologia exclusiva"
+      },
+      {
+        "icon": "graduation",
+        "title": "Treinamento Contínuo da Equipe",
+        "description": "Workshops mensais para sua equipe sobre novas tecnologias, produtividade e tendências do mercado jurídico.",
+        "value": "Evolução constante"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Investimento Premium",
+    "subtitle": "Transparência total, sem surpresas",
+    "plan": {
+      "name": "Freelaw Premium",
+      "price": "R$ 8.500",
+      "period": "por mês",
+      "pieces": "Ilimitadas",
+      "commitment": "Contrato trimestral",
+      "description": "Tudo o que você precisa para transformar seu escritório em referência"
+    },
+    "included": [
+      "Peças jurídicas ilimitadas com SLA de 24h",
+      "Consultoria estratégica mensal (1 sessão de 90min)",
+      "Gerente de conta dedicado",
+      "Revisão dupla especializada",
+      "Acesso completo à IA Jurídica Avançada",
+      "Treinamento mensal para equipe (até 5 pessoas)",
+      "Relatórios analíticos personalizados",
+      "Suporte prioritário 24/7",
+      "Onboarding personalizado",
+      "Biblioteca premium de modelos e precedentes"
+    ],
+    "savings": {
+      "title": "Economia real comparada à contratação",
+      "comparison": [
+        {
+          "item": "Advogado Pleno (CLT)",
+          "cost": "R$ 12.000/mês",
+          "notes": "Salário + encargos + benefícios"
+        },
+        {
+          "item": "Consultoria externa",
+          "cost": "R$ 3.500/mês",
+          "notes": "1 sessão mensal"
+        },
+        {
+          "item": "Software jurídico premium",
+          "cost": "R$ 1.500/mês",
+          "notes": "Por usuário"
+        },
+        {
+          "item": "Total mensal",
+          "cost": "R$ 17.000/mês",
+          "notes": "Custo tradicional"
+        }
+      ],
+      "premiumCost": "R$ 8.500/mês",
+      "monthlySavings": "R$ 8.500",
+      "annualSavings": "R$ 102.000"
+    }
+  },
+  "caseStudy": {
+    "title": "Case Premium: Escritório Silva & Associados",
+    "subtitle": "Como o Premium transformou um escritório tradicional em líder regional",
+    "client": {
+      "name": "Silva & Associados",
+      "area": "Direito Empresarial e Tributário",
+      "city": "São Paulo - SP",
+      "lawyers": "8 advogados",
+      "timeWithFreelawPremium": "14 meses"
+    },
+    "challenge": {
+      "title": "O Desafio",
+      "description": "Escritório com 8 advogados, faturamento estagnado em R$ 180k/mês, alta rotatividade de júniors e processos desorganizados. O sócio passava 70% do tempo apagando incêndios operacionais."
+    },
+    "solution": {
+      "title": "A Solução Premium",
+      "actions": [
+        "Mapeamento completo dos processos em consultoria inicial",
+        "Delegação de 80% das peças processuais para Freelaw",
+        "Implementação de IA para análise de contratos",
+        "Treinamentos mensais para padronização da equipe",
+        "Dashboards personalizados para tomada de decisão"
+      ]
+    },
+    "results": {
+      "title": "Resultados em 14 meses",
+      "metrics": [
+        {
+          "label": "Faturamento mensal",
+          "before": "R$ 180k",
+          "after": "R$ 420k",
+          "growth": "+133%"
+        },
+        {
+          "label": "Margem de lucro",
+          "before": "18%",
+          "after": "38%",
+          "growth": "+111%"
+        },
+        {
+          "label": "Tempo do sócio em estratégia",
+          "before": "30%",
+          "after": "85%",
+          "growth": "+183%"
+        },
+        {
+          "label": "Novos clientes/mês",
+          "before": "3",
+          "after": "12",
+          "growth": "+300%"
+        },
+        {
+          "label": "Rotatividade da equipe",
+          "before": "45%/ano",
+          "after": "8%/ano",
+          "growth": "-82%"
+        },
+        {
+          "label": "NPS (satisfação clientes)",
+          "before": "52",
+          "after": "87",
+          "growth": "+67%"
+        }
+      ]
+    },
+    "quote": "O Premium da Freelaw não é um fornecedor, é um sócio estratégico. Eles entendem nosso negócio e nos ajudam a crescer de forma sustentável. O ROI foi positivo já no terceiro mês.",
+    "author": "Dr. Ricardo Silva",
+    "authorRole": "Sócio fundador - Silva & Associados"
+  },
+  "comparison": {
+    "title": "Premium vs. Plano Padrão",
+    "subtitle": "Entenda as diferenças",
+    "features": [
+      {
+        "feature": "Peças jurídicas mensais",
+        "standard": "Até 20 peças",
+        "premium": "Ilimitadas",
+        "highlight": true
+      },
+      {
+        "feature": "SLA de entrega",
+        "standard": "48h",
+        "premium": "24h",
+        "highlight": true
+      },
+      {
+        "feature": "Revisão",
+        "standard": "Simples",
+        "premium": "Dupla especializada",
+        "highlight": false
+      },
+      {
+        "feature": "Consultoria estratégica",
+        "standard": "Não incluso",
+        "premium": "Mensal (90min)",
+        "highlight": true
+      },
+      {
+        "feature": "Gerente de conta",
+        "standard": "Compartilhado",
+        "premium": "Dedicado",
+        "highlight": false
+      },
+      {
+        "feature": "IA Jurídica Avançada",
+        "standard": "Não incluso",
+        "premium": "Acesso completo",
+        "highlight": true
+      },
+      {
+        "feature": "Treinamentos",
+        "standard": "Onboarding básico",
+        "premium": "Mensais ilimitados",
+        "highlight": false
+      },
+      {
+        "feature": "Relatórios analíticos",
+        "standard": "Básicos",
+        "premium": "Personalizados",
+        "highlight": false
+      },
+      {
+        "feature": "Suporte",
+        "standard": "Comercial",
+        "premium": "Prioritário 24/7",
+        "highlight": false
+      },
+      {
+        "feature": "Investimento mensal",
+        "standard": "R$ 3.200",
+        "premium": "R$ 8.500",
+        "highlight": false
+      }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas Frequentes Premium",
+    "items": [
+      {
+        "question": "Quantas vagas Premium estão disponíveis?",
+        "answer": "Limitamos a 10 novos clientes Premium por trimestre para garantir a qualidade do atendimento e da consultoria estratégica. Isso garante que cada escritório receba atenção dedicada do nosso time."
+      },
+      {
+        "question": "O que acontece se eu precisar de mais de 'ilimitadas' peças?",
+        "answer": "No Premium, 'ilimitadas' significa exatamente isso. Não há limite de peças. Temos escritórios que fazem 50+ peças/mês. Porém, trabalhamos junto com você para otimizar processos e evitar desperdícios."
+      },
+      {
+        "question": "Posso fazer upgrade do Plano Padrão para Premium?",
+        "answer": "Sim! Clientes do plano padrão têm prioridade para upgrade. O valor já pago no mês é creditado proporcionalmente."
+      },
+      {
+        "question": "Como funciona a consultoria estratégica mensal?",
+        "answer": "São sessões de 90 minutos via videoconferência com consultores especializados em gestão de escritórios jurídicos. Agenda flexível, com follow-up por email entre sessões."
+      },
+      {
+        "question": "A IA Jurídica substitui advogados?",
+        "answer": "Não. Nossa IA é uma ferramenta de apoio que acelera pesquisas, identifica padrões e gera insights. A análise final e decisões sempre ficam com os advogados."
+      },
+      {
+        "question": "Qual o prazo de contrato mínimo?",
+        "answer": "O Premium tem contrato trimestral (3 meses) renovável. Após o primeiro ciclo, você pode optar por anual com 15% de desconto."
+      },
+      {
+        "question": "Posso cancelar antes do fim do trimestre?",
+        "answer": "O contrato é trimestral, mas se você não estiver satisfeito nos primeiros 30 dias, devolvemos 100% do investimento, sem perguntas."
+      },
+      {
+        "question": "Como é o processo de onboarding Premium?",
+        "answer": "Processo dedicado de 2 semanas: mapeamento de processos, integração com seus sistemas, treinamento da equipe e definição de workflows personalizados."
+      }
+    ]
+  },
+  "howToStart": {
+    "title": "Como se tornar Premium",
+    "subtitle": "Processo exclusivo e consultivo",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Aplicação inicial",
+        "description": "Preencha um breve questionário sobre seu escritório, desafios atuais e objetivos de crescimento.",
+        "duration": "5 minutos"
+      },
+      {
+        "number": 2,
+        "title": "Diagnóstico estratégico",
+        "description": "Sessão de 45 minutos com nosso time para entender a fundo seu contexto e validar se o Premium faz sentido.",
+        "duration": "45 minutos"
+      },
+      {
+        "number": 3,
+        "title": "Proposta personalizada",
+        "description": "Receba uma proposta customizada com roadmap de implementação e projeção de resultados.",
+        "duration": "48h"
+      },
+      {
+        "number": 4,
+        "title": "Onboarding dedicado",
+        "description": "Processo guiado de integração, configuração e treinamento da equipe.",
+        "duration": "2 semanas"
+      }
+    ],
+    "cta": "Iniciar aplicação Premium",
+    "note": "Não é para todos. Buscamos parcerias de longo prazo com escritórios comprometidos com excelência."
+  },
+  "testimonials": [
+    {
+      "name": "Dra. Camila Ferreira",
+      "role": "Sócia-fundadora",
+      "area": "Direito Imobiliário",
+      "city": "Curitiba - PR",
+      "firm": "Ferreira & Costa Advogados",
+      "lawyers": "5",
+      "quote": "O Premium pagou por si mesmo no segundo mês. A consultoria estratégica me fez enxergar oportunidades que eu ignorava há anos.",
+      "timeWithPremium": "11 meses",
+      "result": "Faturamento +95% em 11 meses"
+    },
+    {
+      "name": "Dr. Marcelo Ribeiro",
+      "role": "Sócio",
+      "area": "Direito Empresarial",
+      "city": "Belo Horizonte - MG",
+      "firm": "Ribeiro Advogados Associados",
+      "lawyers": "12",
+      "quote": "Tínhamos receio do investimento, mas o ROI foi absurdo. Economizamos mais do que gastamos e ainda crescemos 40%.",
+      "timeWithPremium": "18 meses",
+      "result": "ROI de 340% em 18 meses"
+    },
+    {
+      "name": "Dra. Juliana Mendes",
+      "role": "Advogada autônoma Premium",
+      "area": "Direito Trabalhista",
+      "city": "Porto Alegre - RS",
+      "firm": "Atuação individual",
+      "lawyers": "1",
+      "quote": "Sim, sou advogada solo e uso o Premium. Consigo competir com escritórios grandes por ter tecnologia e suporte de primeiro mundo.",
+      "timeWithPremium": "8 meses",
+      "result": "3x mais clientes simultâneos"
+    }
+  ],
+  "footer": {
+    "tagline": "Premium: Onde tecnologia encontra estratégia",
+    "cta": "Agendar apresentação exclusiva",
+    "contact": {
+      "email": "premium@freelaw.com.br",
+      "phone": "+55 11 98765-4321",
+      "whatsapp": "+55 11 98765-4321"
+    },
+    "note": "Atendimento Premium disponível de seg-sex, 8h-20h"
+  },
+  "sections": [
+    { "id": "hero", "title": "Início", "visible": true },
+    { "id": "exclusive", "title": "Exclusividade", "visible": true },
+    { "id": "pricing", "title": "Investimento", "visible": true },
+    { "id": "caseStudy", "title": "Case de Sucesso", "visible": true },
+    { "id": "comparison", "title": "Comparação", "visible": true },
+    { "id": "testimonials", "title": "Depoimentos", "visible": true },
+    { "id": "faq", "title": "FAQ", "visible": true },
+    { "id": "howToStart", "title": "Como Começar", "visible": true }
+  ],
+  "presenterNotes": {
+    "hero": "Começar com exclusividade. Reforçar que não é para todos, apenas 10 vagas/trimestre. Criar escassez saudável.",
+    "exclusive": "Detalhar cada benefício com calma. Mostrar valor real de cada item. Especialmente consultoria (R$ 3.5k/mês).",
+    "pricing": "Ser transparente. Mostrar conta: R$ 17k vs R$ 8.5k. Economia de R$ 102k/ano é real.",
+    "caseStudy": "Contar história completa do Silva & Associados. Focar em números: +133% faturamento, +111% margem.",
+    "comparison": "Lado a lado, visual. Destacar 24h SLA, ilimitadas peças, consultoria mensal.",
+    "testimonials": "Mostrar diversidade: grande (12 advs), médio (5 advs), solo (1 adv). Premium serve todos.",
+    "faq": "Antecipar objeções. Especialmente 'ilimitadas' e garantia 30 dias.",
+    "howToStart": "Não pressionar. Reforçar que é processo consultivo, não venda agressiva. Qualificar lead."
+  }
+}
