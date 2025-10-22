@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "title": "Freelaw - Transforme seu escritório em empresa",
+    "description": "Demonstração exclusiva: Escale sua advocacia sem travar o operacional. Tecnologia jurídica pioneira no Brasil.",
+    "ogImage": "/og-image.png",
+    "keywords": ["legaltech", "advocacia", "automação jurídica", "escritório de advocacia", "tecnologia jurídica"]
+  },
+  "hero": {
+    "headline": "Transforme seu escritório em empresa. Cresça sem contratar mais advogados.",
+    "subheadline": "Demonstração exclusiva para {{CLIENTE}}",
+    "description": "Escale sua advocacia sem travar o operacional.",
+    "ctaPrimary": "Começar agora",
+    "ctaSecondary": "Ver como funciona",
+    "badge": "7+ anos • 100k+ documentos processados"
+  },
+  "stats": {
+    "years": "7+",
+    "documents": "100k+",
+    "lawyers": "15k+",
+    "title": "Pioneiros em tecnologia jurídica no Brasil"
+  },
+  "problem": {
+    "title": "O Problema Hoje",
+    "subtitle": "O que era pra ser conquista vira pressão",
+    "items": [
+      {
+        "text": "300 processos ativos, prazos apertando",
+        "icon": "clock"
+      },
+      {
+        "text": "Equipe no limite, retrabalho em peças",
+        "icon": "users"
+      },
+      {
+        "text": "Crescer dói mais do que ajuda",
+        "icon": "trendingDown"
+      }
+    ]
+  },
+  "solution": {
+    "title": "A Solução Freelaw",
+    "subtitle": "Como funciona",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Diagnóstico rápido",
+        "description": "Entendemos suas necessidades e volumes em minutos",
+        "icon": "search"
+      },
+      {
+        "number": 2,
+        "title": "Delegação sob demanda",
+        "description": "Você solicita peças e minutas quando precisar, sem contratar",
+        "icon": "zap"
+      },
+      {
+        "number": 3,
+        "title": "Qualidade revisada e SLA",
+        "description": "Entrega em até 48h com qualidade garantida por revisores especializados",
+        "icon": "checkCircle"
+      }
+    ]
+  },
+  "beforeAfter": {
+    "title": "Antes → Depois",
+    "subtitle": "Resultados que transformam o dia a dia",
+    "comparisons": [
+      {
+        "metric": "Lead time",
+        "before": "5-7 dias",
+        "after": "24-48h",
+        "improvement": "70% mais rápido"
+      },
+      {
+        "metric": "Retrabalho",
+        "before": "30% das peças",
+        "after": "< 5%",
+        "improvement": "83% de redução"
+      },
+      {
+        "metric": "Foco do sócio",
+        "before": "Operacional 60%",
+        "after": "Estratégia 80%",
+        "improvement": "Foco invertido"
+      },
+      {
+        "metric": "Previsibilidade",
+        "before": "Incerta",
+        "after": "SLA garantido",
+        "improvement": "100% controlado"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Dr. Carlos Mendes",
+      "role": "Sócio fundador",
+      "area": "Direito Civil",
+      "city": "Ribeirão Preto",
+      "quote": "Recuperei 15 horas por semana. Agora consigo focar em novos clientes e estratégia.",
+      "timeWithFrelaw": "18 meses",
+      "avatar": "/avatars/carlos.jpg"
+    },
+    {
+      "name": "Dra. Patrícia Silva",
+      "role": "Advogada autônoma",
+      "area": "Direito de Família",
+      "city": "Campinas",
+      "quote": "A qualidade das peças é impressionante. Economizo tempo e ganho confiança.",
+      "timeWithFrelaw": "10 meses",
+      "avatar": "/avatars/patricia.jpg"
+    },
+    {
+      "name": "Dr. Roberto Alves",
+      "role": "Sócio",
+      "area": "Direito Empresarial",
+      "city": "Sorocaba",
+      "quote": "Consegui crescer 40% sem contratar. A Freelaw é meu braço direito operacional.",
+      "timeWithFrelaw": "2 anos",
+      "avatar": "/avatars/roberto.jpg"
+    }
+  ],
+  "pilotPlan": {
+    "title": "Plano Piloto de Entrada",
+    "subtitle": "Comece sem compromisso",
+    "price": "R$ 1.000",
+    "pieces": 5,
+    "validity": "20 dias",
+    "commitment": "Sem fidelidade",
+    "features": [
+      "5 peças jurídicas sob demanda",
+      "Entrega em até 48h",
+      "Revisão especializada incluída",
+      "Suporte prioritário",
+      "Válido por 20 dias"
+    ],
+    "cta": "Quero destravar 5 peças agora",
+    "observation": "Após o piloto, agendamos automaticamente uma 2ª reunião para avaliar resultados"
+  },
+  "cases": [
+    {
+      "name": "Verônica",
+      "area": "Direito de Família",
+      "city": "Santos",
+      "result": "Menos retrabalho, +tempo para MBA",
+      "description": "Reduziu 40% do tempo em minutas repetitivas e conseguiu fazer MBA sem comprometer clientes.",
+      "metrics": {
+        "timeSaved": "12h/semana",
+        "qualityIncrease": "35%"
+      },
+      "quote": "Finalmente consegui estudar e crescer profissionalmente."
+    },
+    {
+      "name": "Jefferson",
+      "area": "Direito Trabalhista",
+      "city": "Jundiaí",
+      "result": "Reduziu folha, mudou para sala maior",
+      "description": "Diminuiu 2 colaboradores júnior e reinvestiu em espaço físico melhor para receber clientes.",
+      "metrics": {
+        "costReduction": "R$ 8k/mês",
+        "officeUpgrade": "Sala 40% maior"
+      },
+      "quote": "Economizei na folha e investi em estrutura. Clientes percebem a diferença."
+    },
+    {
+      "name": "Ítara",
+      "area": "Direito Civil",
+      "city": "Piracicaba",
+      "result": "Economizou 10h/semana delegando",
+      "description": "Focou em audiências e captação enquanto a Freelaw cuidava das peças processuais.",
+      "metrics": {
+        "timeSaved": "10h/semana",
+        "newClients": "+25%"
+      },
+      "quote": "Voltei a fazer o que amo: atender clientes, não redigir petições."
+    }
+  ],
+  "howToStart": {
+    "title": "Como Começar",
+    "subtitle": "Te mostro em 5 minutos e você decide o próximo passo",
+    "pitch": "Advogados com o perfil como o seu costumam ser abertos para conhecer mais sobre...",
+    "ctaPrimary": "Agendar agora",
+    "ctaSecondary": "Ver materiais de referência",
+    "benefits": [
+      "Diagnóstico gratuito do seu escritório",
+      "Demonstração personalizada em 5 minutos",
+      "Proposta sob medida para seu volume",
+      "Teste sem compromisso"
+    ]
+  },
+  "footer": {
+    "tagline": "Tecnologia jurídica que escala sua advocacia",
+    "links": {
+      "product": [
+        { "label": "Como funciona", "href": "#solution" },
+        { "label": "Planos", "href": "#pilot" },
+        { "label": "Casos de sucesso", "href": "#cases" }
+      ],
+      "company": [
+        { "label": "Sobre nós", "href": "/about" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Contato", "href": "/contact" }
+      ],
+      "legal": [
+        { "label": "Privacidade", "href": "/privacy" },
+        { "label": "Termos de uso", "href": "/terms" },
+        { "label": "LGPD", "href": "/lgpd" }
+      ]
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/freelaw",
+      "instagram": "https://instagram.com/freelaw",
+      "youtube": "https://youtube.com/@freelaw"
+    },
+    "contact": {
+      "email": "contato@freelaw.com.br",
+      "phone": "+55 11 99999-9999"
+    },
+    "copyright": "© 2025 Freelaw. Todos os direitos reservados."
+  },
+  "sections": [
+    { "id": "hero", "title": "Início", "visible": true },
+    { "id": "stats", "title": "Autoridade", "visible": true },
+    { "id": "problem", "title": "O Problema", "visible": true },
+    { "id": "solution", "title": "Solução", "visible": true },
+    { "id": "beforeAfter", "title": "Antes → Depois", "visible": true },
+    { "id": "pilot", "title": "Plano Piloto", "visible": true },
+    { "id": "cases", "title": "Casos de Sucesso", "visible": true },
+    { "id": "howToStart", "title": "Como Começar", "visible": true }
+  ],
+  "presenterNotes": {
+    "hero": "Começar com impacto. Pausar 2s após headline. Mencionar nome do cliente se tiver query param.",
+    "stats": "Reforçar credibilidade: 7 anos no mercado, mais de 100k documentos. Mostrar que não somos startup de ontem.",
+    "problem": "Criar empatia. Falar devagar. 'O que era pra ser conquista vira pressão' — deixar essa frase respirar.",
+    "solution": "Explicar passo a passo. Não correr. Gesticular nos 3 ícones.",
+    "beforeAfter": "Mostrar números concretos. Lead time: de 7 dias para 48h. Retrabalho: de 30% para menos de 5%.",
+    "pilot": "Apresentar oferta clara: R$ 1k, 5 peças, 20 dias, sem fidelidade. Depois agenda 2ª reunião automaticamente.",
+    "cases": "Histórias humanas. Verônica fez MBA, Jefferson economizou 8k/mês, Ítara recuperou 10h/semana.",
+    "howToStart": "Fechar com call to action suave: 'Te mostro em 5 min e você decide'. Não pressionar."
+  }
+}

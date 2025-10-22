@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 11.8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11.8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11.8%;
+    --primary: 276 47% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 276 35% 68%;
+    --secondary-foreground: 0 0% 11.8%;
+    --muted: 0 0% 97.3%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 276 35% 68%;
+    --accent-foreground: 0 0% 11.8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 276 47% 42%;
+    --radius: 1rem;
+    --chart-1: 276 47% 42%;
+    --chart-2: 276 35% 68%;
+    --chart-3: 0 0% 45.1%;
+    --chart-4: 0 0% 89.8%;
+    --chart-5: 0 0% 97.3%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-secondary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-primary;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-brand-primary ring-offset-2;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+
+  body {
+    @apply bg-white text-black;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print,
+  header,
+  footer,
+  .progress-bar,
+  .scroll-indicator,
+  button,
+  .presenter-notes {
+    display: none !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+
+  section:last-of-type {
+    page-break-after: auto;
+  }
+
+  /* Ensure gradients and backgrounds print */
+  .gradient-bg {
+    background: linear-gradient(90deg, #6B3C9B 0%, #A986D1 100%) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Presenter mode minimal */
+.minimal-mode header,
+.minimal-mode footer,
+.minimal-mode .scroll-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Scroll snap (subtle) */
+.scroll-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
