@@ -86,7 +86,8 @@ const config: Config = {
         glow: "0 0 0 2px rgba(118,70,255,0.3), 0 10px 40px rgba(118,70,255,0.35)",
       },
       backgroundImage: {
-        heroGradient: "radial-gradient(1000px 600px at 20% -10%, rgba(118,70,255,0.25), transparent), radial-gradient(800px 500px at 90% 10%, rgba(118,70,255,0.15), transparent)",
+        heroGradient: "linear-gradient(to bottom, rgba(14,10,20,1) 0%, rgba(14,10,20,0.95) 50%, rgba(118,70,255,0.2) 100%)",
+        heroGradientLight: "linear-gradient(to bottom, rgba(14,10,20,1) 0%, rgba(14,10,20,0.98) 60%, rgba(118,70,255,0.08) 100%)",
       },
       spacing: {
         section: "6rem",

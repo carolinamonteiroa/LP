@@ -6,7 +6,10 @@
       "Bash(mkdir:*)",
       "Read(//c/Users/carol/Documents/KR - tri/Fotos/**)",
       "Bash(pnpm dev)",
-      "Bash(copy \"C:\\Users\\carol\\Documents\\KR - tri\\Fotos\\cel\\Design sem nome.png\" \"C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\public\\celular.png\")"
+      "Bash(copy \"C:\\Users\\carol\\Documents\\KR - tri\\Fotos\\cel\\Design sem nome.png\" \"C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\public\\celular.png\")",
+      "Bash(copy:*)",
+      "Bash(cp:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

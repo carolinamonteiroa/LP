@@ -12,9 +12,9 @@ export function HeroPremium({ clientName = "" }: HeroPremiumProps) {
   const [name, setName] = useState(clientName)
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-freelaw-bg">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-freelaw-bg pt-16">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-heroGradient" />
+      <div className="absolute inset-0 bg-heroGradientLight" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6 -mt-8 lg:-mt-12">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">

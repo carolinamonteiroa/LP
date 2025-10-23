@@ -86,50 +86,6 @@ export function Page5Section() {
             className="flex justify-center"
           >
             <div className="relative w-[450px] h-[450px]" ref={counterRef}>
-              {/* Neon Arrow pointing to follower counter */}
-              <motion.svg
-                initial={{ opacity: 0, pathLength: 0 }}
-                whileInView={{ opacity: 1, pathLength: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, delay: 0.8 }}
-                className="absolute -top-32 -left-32 w-64 h-64 pointer-events-none z-10"
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-                <motion.path
-                  d="M 30 30 Q 80 50, 120 90 L 130 100"
-                  stroke="#A78BFA"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  filter="url(#glow)"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, delay: 0.8 }}
-                />
-                <motion.path
-                  d="M 130 100 L 120 95 M 130 100 L 125 110"
-                  stroke="#A78BFA"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  filter="url(#glow)"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 2.3 }}
-                />
-              </motion.svg>
-
               <Image
                 src="/celular.png"
                 alt="Presença digital"
