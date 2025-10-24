@@ -1,6 +1,6 @@
 # Freelaw - Landing Page de Demonstração
 
-Landing Page premium de demonstração para apresentações ao vivo da Freelaw (legaltech brasileira). Substitui apresentações em PowerPoint com uma experiência de scroll vertical elegante, responsiva e com controles de modo apresentador.
+Landing Page premium de demonstração para apresentações ao vivo da Freelaw (legaltech brasileira). Substitui apresentações em PowerPoint com uma experiência de scroll vertical elegante, responsiva e com controles de modo apresentador
 
 ## 🎯 Objetivo
 
