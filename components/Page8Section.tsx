@@ -68,7 +68,7 @@ export function Page8Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 leading-tight"
+          className="text-4xl md:text-6xl lg:text-6xl font-bold text-center mb-16 leading-tight"
         >
           <span className="text-white">Mais tempo para </span>
           <span className="bg-gradient-to-r from-white via-freelaw-purpleLight to-freelaw-purpleLight bg-clip-text text-transparent">

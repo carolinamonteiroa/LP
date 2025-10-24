@@ -60,7 +60,7 @@ export function Page9Section() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                className="text-4xl md:text-6xl lg:text-6xl font-bold leading-tight"
               >
                 <span className="text-white">Como saber se a </span>
                 <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">

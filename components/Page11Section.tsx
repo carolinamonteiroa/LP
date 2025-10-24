@@ -33,7 +33,7 @@ export function Page11Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center italic text-white"
+          className="text-4xl md:text-6xl lg:text-6xl font-bold mb-16 text-center italic text-white"
         >
           &ldquo;Não sei se com o meu volume<br />
           compensa delegar..&rdquo;

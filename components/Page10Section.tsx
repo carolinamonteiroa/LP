@@ -14,7 +14,7 @@ export function Page10Section() {
   const bottomCards = [
     {
       icon: Users,
-      number: "4.48",
+      number: "4.60",
       label: "Nota média dos prestadores",
       description: "Avaliados em todas as entregas"
     },
@@ -26,9 +26,9 @@ export function Page10Section() {
     },
     {
       icon: TrendingUp,
-      number: "5",
+      number: "4",
       label: "Notas baixas a cada 100",
-      description: "Apenas 5% têm notas 1 e 2"
+      description: "Apenas 4% têm notas 1 e 2"
     }
   ]
 
@@ -49,7 +49,7 @@ export function Page10Section() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 italic text-white">
+          <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold mb-3 italic text-white">
             &ldquo;Tenho receio da qualidade...&rdquo;
           </h2>
           <p className="text-xl text-freelaw-textDim">
@@ -75,7 +75,7 @@ export function Page10Section() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-center mb-4"
             >
-              <div className="text-5xl font-bold text-freelaw-purpleLight">
+              <div className="text-6xl font-bold text-freelaw-purpleLight">
                 11.000
               </div>
               <div className="text-sm text-white/90 mt-1">Advogados cadastrados</div>
@@ -108,7 +108,7 @@ export function Page10Section() {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="text-center mt-4"
             >
-              <div className="text-5xl font-bold text-freelaw-purpleLight">
+              <div className="text-6xl font-bold text-freelaw-purpleLight">
                 180
               </div>
               <div className="text-sm text-white/90 mt-1">Elaborando peças</div>

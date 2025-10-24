@@ -99,7 +99,7 @@ export function Page13Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center px-4"
+          className="text-4xl md:text-6xl lg:text-6xl font-bold mb-8 text-center px-4"
         >
           <span className="bg-gradient-to-r from-white via-freelaw-purpleLight to-white bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(169,134,209,0.8)]">
             Alguns dos nossos 5 mil clientes dizem..
@@ -218,7 +218,7 @@ export function Page13Section() {
               </button>
 
               {/* Client Photo */}
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-8">
                 <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-freelaw-purple shadow-glow">
                   <Image
                     src={selectedCase.photo}
@@ -230,7 +230,7 @@ export function Page13Section() {
               </div>
 
               {/* Client Name */}
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
                 {selectedCase.name}
               </h3>
 

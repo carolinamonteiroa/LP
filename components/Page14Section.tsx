@@ -131,7 +131,7 @@ export function Page14Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 leading-tight text-white"
+          className="text-4xl md:text-6xl lg:text-6xl font-bold text-center mb-4 leading-tight text-white"
         >
           Conheça nossos planos
         </motion.h2>
@@ -167,7 +167,7 @@ export function Page14Section() {
         </div>
 
         {/* Main Plan Cards */}
-        <div className="space-y-8 mb-32">
+        <div className="space-y-8 mb-42">
           <AnimatePresence>
             {mainPlans.map((plan, index) => (
               visiblePlans.includes(index) && (

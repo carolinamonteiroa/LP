@@ -34,7 +34,7 @@ export function Page3Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6"
         >
           83% dos advogados relatam<br />
           <span className="text-freelaw-purpleLight">sobrecarga</span> constante
@@ -126,7 +126,7 @@ export function Page3Section() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-center py-12"
+                className="text-center py-20"
               >
                 <p className="text-freelaw-textDim text-lg">
                   Clique na imagem para revelar os pensamentos...
