@@ -99,7 +99,7 @@ export function Page13Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center px-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center px-4"
         >
           <span className="bg-gradient-to-r from-white via-freelaw-purpleLight to-white bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(169,134,209,0.8)]">
             Alguns dos nossos 5 mil clientes dizem..
@@ -155,12 +155,13 @@ export function Page13Section() {
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 animate={{
                   x: xValues,
                   y: yValues
                 }}
                 transition={{
+                  opacity: { duration: 0.6, delay: index * 0.1 },
+                  scale: { duration: 0.6, delay: index * 0.1 },
                   x: {
                     duration: 60,
                     repeat: Infinity,
@@ -235,11 +236,11 @@ export function Page13Section() {
 
               {/* Testimonial */}
               <div className="relative">
-                <div className="absolute -top-4 -left-2 text-6xl text-freelaw-purple/30 font-serif">"</div>
+                <div className="absolute -top-4 -left-2 text-6xl text-freelaw-purple/30 font-serif">&ldquo;</div>
                 <p className="text-white text-lg md:text-xl leading-relaxed italic px-6">
                   {selectedCase.testimonial}
                 </p>
-                <div className="absolute -bottom-8 -right-2 text-6xl text-freelaw-purple/30 font-serif">"</div>
+                <div className="absolute -bottom-8 -right-2 text-6xl text-freelaw-purple/30 font-serif">&rdquo;</div>
               </div>
             </motion.div>
           </motion.div>

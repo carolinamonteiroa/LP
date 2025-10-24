@@ -32,7 +32,7 @@ export function Page7Section() {
 
       {/* Logo watermark */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5">
-        <div className="relative w-[600px] h-[600px]">
+        <div className="relative w-[800px] h-[800px]">
           <img
             src="/Logotipo/Ícone-colorido.png"
             alt="Freelaw"

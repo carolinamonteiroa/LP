@@ -52,7 +52,7 @@ export function Page9Section() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-2xl md:text-3xl text-freelaw-textDim italic"
               >
-                "Estou com receio..."
+                &ldquo;Estou com receio...&rdquo;
               </motion.p>
 
               <motion.h2

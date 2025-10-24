@@ -34,11 +34,11 @@ function PremiumPageContent() {
     <div className="min-h-screen bg-freelaw-bg">
       <HeaderPremium />
       <HeroPremium clientName={clientName} />
-      <Page2Section />
       <Page3Section />
       <Page4Section />
       <Page5Section />
       <Page6Section />
+      <Page2Section />
       <Page7Section />
       <Page8Section />
       <Page9Section />

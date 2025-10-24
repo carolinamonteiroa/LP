@@ -7,7 +7,7 @@ import { useEffect, useState, useRef } from "react"
 export function Page5Section() {
   const [followers, setFollowers] = useState(1000)
   const counterRef = useRef(null)
-  const isInView = useInView(counterRef, { once: true })
+  const isInView = useInView(counterRef, { once: true, amount: 0.5 })
 
   useEffect(() => {
     if (!isInView) return
@@ -49,7 +49,7 @@ export function Page5Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-white text-center mb-16 relative"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16 relative"
         >
           Mas mesmo com <span className="relative inline-block">tudo</span> isso..
         </motion.h2>

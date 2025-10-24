@@ -1,10 +1,22 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, ArrowRight, Smartphone, Zap } from "lucide-react"
+import { Sparkles, ArrowRight, Smartphone, Zap, Link, Check } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 
 export function Page15Section() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyUrl = async () => {
+    try {
+      await navigator.clipboard.writeText('https://app.freelaw.work/contratante/cadastro')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Falha ao copiar:', err)
+    }
+  }
   return (
     <section
       id="page15"
@@ -187,6 +199,26 @@ export function Page15Section() {
                 Use a câmera do seu celular para acessar<br />
                 <span className="text-white font-semibold">nossa plataforma</span>
               </p>
+
+              {/* Copy URL Button */}
+              <motion.button
+                onClick={handleCopyUrl}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-6 px-6 py-3 bg-gradient-to-r from-freelaw-purpleLight to-purple-500 text-white font-semibold rounded-full flex items-center gap-2 mx-auto transition-all duration-300 hover:shadow-lg hover:shadow-freelaw-purpleLight/50"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-5 h-5" />
+                    <span>Link copiado!</span>
+                  </>
+                ) : (
+                  <>
+                    <Link className="w-5 h-5" />
+                    <span>Copiar link desta página</span>
+                  </>
+                )}
+              </motion.button>
 
               <motion.div
                 animate={{

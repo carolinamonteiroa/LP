@@ -9,7 +9,11 @@
       "Bash(copy \"C:\\Users\\carol\\Documents\\KR - tri\\Fotos\\cel\\Design sem nome.png\" \"C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\public\\celular.png\")",
       "Bash(copy:*)",
       "Bash(cp:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://cdn.coverr.co/videos/coverr-golden-fire-4403/1080p.webm'' -OutFile ''C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\public\\fire-premium.webm''\")",
+      "Bash(powershell -Command \"$client = New-Object System.Net.WebClient; $client.Headers.Add(''User-Agent'', ''Mozilla/5.0''); $client.DownloadFile(''https://sample-videos.com/video321/webm/720/big_buck_bunny_720p_1mb.webm'', ''C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\public\\fire-alpha-temp.webm'')\")",
+      "Bash(powershell:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []

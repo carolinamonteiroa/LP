@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, XCircle } from "lucide-react"
 
 export function Page11Section() {
   const highValueActivities = [
@@ -33,14 +33,10 @@ export function Page11Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center italic"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center italic text-white"
         >
-          <span className="text-white">"Não sei se com o meu </span>
-          <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
-            volume<br />
-            compensa delegar..
-          </span>
-          <span className="text-white">"</span>
+          &ldquo;Não sei se com o meu volume<br />
+          compensa delegar..&rdquo;
         </motion.h2>
 
         {/* Comparison Grid */}
@@ -64,12 +60,12 @@ export function Page11Section() {
             </div>
 
             {/* Title */}
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent text-center">
+            <h3 className="text-3xl font-bold text-white text-center">
               Alto valor
             </h3>
 
             {/* List */}
-            <div className="space-y-4 bg-white/5 border border-green-400/30 rounded-xl p-6">
+            <div className="space-y-4 bg-green-500/10 border border-green-400/40 rounded-xl p-6">
               {highValueActivities.map((activity, index) => (
                 <motion.div
                   key={index}
@@ -94,7 +90,7 @@ export function Page11Section() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden lg:flex items-center justify-center"
           >
-            <div className="w-1 h-[600px] bg-gradient-to-b from-transparent via-freelaw-purpleLight to-transparent opacity-60" />
+            <div className="w-1 h-[600px] bg-gradient-to-b from-transparent via-white to-transparent opacity-40" />
           </motion.div>
 
           {/* RIGHT BLOCK - Low Value */}
@@ -116,12 +112,12 @@ export function Page11Section() {
             </div>
 
             {/* Title */}
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent text-center">
+            <h3 className="text-3xl font-bold text-red-500 text-center">
               Baixo valor agregado
             </h3>
 
             {/* List */}
-            <div className="space-y-4 bg-white/5 border border-red-400/30 rounded-xl p-6">
+            <div className="space-y-4 bg-red-500/10 border-2 border-red-500/50 rounded-xl p-6 shadow-[0_0_30px_rgba(239,68,68,0.3)]">
               {lowValueActivities.map((activity, index) => (
                 <motion.div
                   key={index}
@@ -131,8 +127,8 @@ export function Page11Section() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-white text-lg">{activity}</span>
+                  <XCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-white/90 text-lg line-through decoration-red-500/50">{activity}</span>
                 </motion.div>
               ))}
             </div>

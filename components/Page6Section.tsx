@@ -21,17 +21,17 @@ export function Page6Section() {
     },
     {
       icon: TrendingUp,
-      text: "É preciso ser bom de Marketing",
+      text: "É preciso ser bom de marketing",
       angle: 144
     },
     {
       icon: DollarSign,
-      text: "É preciso ser bom em Vendas",
+      text: "É preciso ser bom em vendas",
       angle: 216
     },
     {
       icon: Heart,
-      text: "É preciso ser bom em Experiência do Cliente",
+      text: "É preciso ser bom em experiência do cliente",
       angle: 288
     }
   ]
@@ -64,7 +64,16 @@ export function Page6Section() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-20 text-white"
         >
-          Não basta ser apenas "bom advogado"
+          <span className="relative inline-block">
+            Não basta
+            <motion.span
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-freelaw-purple to-freelaw-purpleLight"
+            />
+          </span> ser apenas &ldquo;bom advogado&rdquo;
         </motion.h2>
 
         {/* Central Interactive Circle */}

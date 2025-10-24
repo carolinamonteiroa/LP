@@ -34,10 +34,10 @@ export function Page3Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-white text-center mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4"
         >
           83% dos advogados relatam<br />
-          sobrecarga constante
+          <span className="text-freelaw-purpleLight">sobrecarga</span> constante
         </motion.h2>
 
         <motion.p
@@ -79,18 +79,6 @@ export function Page3Section() {
               </div>
             </motion.div>
 
-            {/* Click hint */}
-            {clickCount === 0 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="mb-4 text-freelaw-purpleLight text-sm"
-              >
-                👆 Clique aqui
-              </motion.div>
-            )}
-
             {/* Overload Indicator */}
             <motion.div
               key={clickCount}
@@ -125,7 +113,7 @@ export function Page3Section() {
                 >
                   <div className="p-4 rounded-lg bg-freelaw-purple/10 border-l-4 border-freelaw-purpleLight">
                     <p className="text-white text-base md:text-lg leading-relaxed">
-                      "{phrase}"
+                      &ldquo;{phrase}&rdquo;
                     </p>
                   </div>
                 </motion.div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { Check, ChevronDown, Lock } from "lucide-react"
+import { Check, ChevronDown, Lock, Flame, TrendingUp } from "lucide-react"
 import { useState } from "react"
 
 export function Page14Section() {
@@ -177,17 +177,170 @@ export function Page14Section() {
                   animate={{ opacity: 1, height: "auto", y: 0 }}
                   exit={{ opacity: 0, height: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="relative max-w-2xl mx-auto overflow-hidden"
+                  className="relative max-w-2xl mx-auto"
                 >
-                  <div className={`relative bg-white/5 border-2 rounded-2xl p-8 ${
+                  <div className={`relative bg-white/5 border-2 rounded-2xl p-8 overflow-hidden ${
                     plan.highlight
-                      ? 'border-yellow-500 shadow-glow'
+                      ? 'border-orange-500 shadow-[0_0_40px_rgba(249,115,22,0.6)]'
                       : 'border-white/20'
                   }`}>
                     {plan.highlight && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-yellow-500 text-black text-sm font-bold rounded-full">
-                        Mais Popular
-                      </div>
+                      <>
+                        {/* Fire Effect Border */}
+                        <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-0">
+                          {/* Animated Fire Gradient Border */}
+                          <motion.div
+                            animate={{
+                              background: [
+                                'linear-gradient(0deg, rgba(255,69,0,0) 0%, rgba(255,140,0,0.4) 50%, rgba(255,69,0,0) 100%)',
+                                'linear-gradient(90deg, rgba(255,69,0,0) 0%, rgba(255,140,0,0.4) 50%, rgba(255,69,0,0) 100%)',
+                                'linear-gradient(180deg, rgba(255,69,0,0) 0%, rgba(255,140,0,0.4) 50%, rgba(255,69,0,0) 100%)',
+                                'linear-gradient(270deg, rgba(255,69,0,0) 0%, rgba(255,140,0,0.4) 50%, rgba(255,69,0,0) 100%)',
+                                'linear-gradient(0deg, rgba(255,69,0,0) 0%, rgba(255,140,0,0.4) 50%, rgba(255,69,0,0) 100%)'
+                              ]
+                            }}
+                            transition={{
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "linear"
+                            }}
+                            className="absolute inset-0 blur-xl"
+                          />
+
+                          {/* Flickering flames around edges */}
+                          {[...Array(30)].map((_, i) => {
+                            const side = i % 4;
+                            const position = (i / 4) * 10;
+                            let positionStyle = {};
+
+                            if (side === 0) positionStyle = { top: '-15px', left: `${position}%` };
+                            else if (side === 1) positionStyle = { right: '-15px', top: `${position}%` };
+                            else if (side === 2) positionStyle = { bottom: '-15px', left: `${position}%` };
+                            else positionStyle = { left: '-15px', top: `${position}%` };
+
+                            return (
+                              <motion.div
+                                key={i}
+                                animate={{
+                                  scale: [1, 1.8, 0.8, 1.5, 1],
+                                  opacity: [0.4, 0.9, 0.3, 0.8, 0.4],
+                                  y: side === 0 || side === 2 ? [-10, -25, -10] : 0,
+                                  x: side === 1 || side === 3 ? [side === 1 ? 10 : -10, side === 1 ? 25 : -25, side === 1 ? 10 : -10] : 0,
+                                }}
+                                transition={{
+                                  duration: 0.8 + Math.random() * 0.8,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: Math.random() * 2
+                                }}
+                                className="absolute w-4 h-6 rounded-full blur-sm"
+                                style={{
+                                  ...positionStyle,
+                                  background: `radial-gradient(circle, ${
+                                    Math.random() > 0.5 ? '#ff4500' : '#ffa500'
+                                  } 0%, rgba(255,69,0,0) 70%)`
+                                }}
+                              />
+                            );
+                          })}
+                        </div>
+
+                        {/* CSS Fire Effect at Footer */}
+                        <div className="absolute bottom-0 left-0 right-0 h-[35%] z-[1] pointer-events-none overflow-hidden">
+                          {/* Animated Fire Layers */}
+                          {[...Array(5)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className="absolute inset-0"
+                              animate={{
+                                opacity: [0.3, 0.7, 0.4, 0.8, 0.3],
+                                scale: [1, 1.1, 1.05, 1.15, 1],
+                                y: [0, -10, -5, -15, 0]
+                              }}
+                              transition={{
+                                duration: 2 + i * 0.5,
+                                repeat: Infinity,
+                                delay: i * 0.3,
+                                ease: "easeInOut"
+                              }}
+                              style={{
+                                background: `radial-gradient(ellipse ${50 + i * 10}% ${40 + i * 5}% at ${45 + i * 2}% 100%,
+                                  rgba(255,${140 + i * 20},0,${0.6 - i * 0.1}) 0%,
+                                  rgba(255,${200 + i * 10},0,${0.4 - i * 0.08}) 30%,
+                                  transparent 70%)`,
+                                maskImage: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)',
+                                WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)'
+                              }}
+                            />
+                          ))}
+
+                          {/* Golden Glow Base */}
+                          <div
+                            className="absolute inset-0 mix-blend-screen opacity-50"
+                            style={{
+                              background: 'linear-gradient(to top, rgba(255,165,0,0.9) 0%, rgba(255,215,0,0.6) 25%, rgba(255,140,0,0.4) 50%, transparent 100%)'
+                            }}
+                          />
+
+                          {/* Flickering Hot Spots */}
+                          {[...Array(8)].map((_, i) => (
+                            <motion.div
+                              key={`spot-${i}`}
+                              className="absolute bottom-0 w-12 h-12 rounded-full blur-xl"
+                              animate={{
+                                opacity: [0.3, 0.8, 0.4, 0.9, 0.3],
+                                scale: [0.8, 1.2, 0.9, 1.3, 0.8],
+                                x: [0, Math.random() * 20 - 10, 0]
+                              }}
+                              transition={{
+                                duration: 1.5 + Math.random(),
+                                repeat: Infinity,
+                                delay: i * 0.2,
+                                ease: "easeInOut"
+                              }}
+                              style={{
+                                left: `${10 + i * 11}%`,
+                                background: `radial-gradient(circle, ${
+                                  i % 2 === 0 ? 'rgba(255,215,0,0.8)' : 'rgba(255,140,0,0.8)'
+                                } 0%, transparent 70%)`
+                              }}
+                            />
+                          ))}
+                        </div>
+
+                        {/* Badge Mais Vendido - Centered Above */}
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{
+                            opacity: 1,
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{
+                            opacity: { duration: 0.5 },
+                            scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                          }}
+                          className="absolute -top-4 left-1/2 -translate-x-1/2 z-30"
+                        >
+                          <div className="relative px-8 py-4 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white text-xl font-bold rounded-full shadow-[0_0_40px_rgba(255,69,0,0.8)] border-2 border-yellow-300">
+                            <motion.span
+                              animate={{
+                                textShadow: [
+                                  '0 0 20px rgba(255,255,255,0.8)',
+                                  '0 0 30px rgba(255,165,0,1)',
+                                  '0 0 20px rgba(255,255,255,0.8)'
+                                ]
+                              }}
+                              transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                              }}
+                            >
+                              🔥 MAIS VENDIDO 🔥
+                            </motion.span>
+                          </div>
+                        </motion.div>
+                      </>
                     )}
 
                     <div className={`inline-block px-4 py-1 rounded-full ${plan.bgColor} text-white text-sm font-semibold mb-4`}>

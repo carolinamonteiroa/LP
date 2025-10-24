@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Calendar, FileText, Users, Star } from "lucide-react"
+import { Calendar, FileText, Users, Radio } from "lucide-react"
 
 export function Page2Section() {
   const stats = [
@@ -25,10 +25,10 @@ export function Page2Section() {
       description: "a nossa rede mais de 3k ao ano"
     },
     {
-      icon: Star,
-      number: "4.1",
-      title: "Avaliação dos prestadores",
-      description: "avaliação feita pelos contratantes"
+      icon: Radio,
+      number: "100k",
+      title: "Ouvintes no podcast",
+      description: "maior podcast de inovação jurídica do Brasil"
     }
   ]
 
@@ -95,9 +95,6 @@ export function Page2Section() {
                   </div>
                   <div className="text-lg font-semibold text-white mb-2">
                     {stat.title}
-                  </div>
-                  <div className="text-sm text-freelaw-textDim">
-                    {stat.description}
                   </div>
                 </motion.div>
               ))}

@@ -29,7 +29,7 @@ export function Page4Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-white text-center mb-16"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16"
         >
           Escalar na advocacia tem suas dificuldades
         </motion.h2>

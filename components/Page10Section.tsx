@@ -1,61 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Users, Award, CheckCircle, Star, TrendingUp } from "lucide-react"
+import { CheckCircle, Users, TrendingUp } from "lucide-react"
 
 export function Page10Section() {
-  const stats = [
+  const funnelStages = [
+    { label: "Teste", width: "100%", gradient: "from-[#6B3C9B] to-[#8554B0]", glow: "shadow-[0_0_30px_rgba(107,60,155,0.7)]" },
+    { label: "Curadoria", width: "75%", gradient: "from-[#8554B0] to-[#9F6CC5]", glow: "shadow-[0_0_30px_rgba(133,84,176,0.7)]" },
+    { label: "Treinamento", width: "55%", gradient: "from-[#9F6CC5] to-[#A986D1]", glow: "shadow-[0_0_30px_rgba(159,108,197,0.7)]" },
+    { label: "Acompanhamento", width: "40%", gradient: "from-[#A986D1] to-[#B9A0DD]", glow: "shadow-[0_0_35px_rgba(169,134,209,0.8)]" }
+  ]
+
+  const bottomCards = [
     {
       icon: Users,
-      number: "11.000",
-      label: "Advogados cadastrados",
-      description: "Apenas 350 elaborando peças"
-    },
-    {
-      icon: Award,
-      number: "100%",
-      label: "Curadoria completa",
-      description: "Todos passam por treinamento"
-    },
-    {
-      icon: Star,
       number: "4.48",
       label: "Nota média dos prestadores",
-      description: "Avaliados em todas as entregas",
-      highlight: true
-    }
-  ]
-
-  const qualityMetrics = [
-    {
-      percentage: 87,
-      label: "Aprovados de primeira",
-      description: "Sem revisão ou substituição",
-      color: "from-green-400 to-green-600"
+      description: "Avaliados em todas as entregas"
     },
     {
-      percentage: 95,
-      label: "Notas 3, 4 e 5",
-      description: "Apenas 5% com notas 1 e 2",
-      color: "from-freelaw-purpleLight to-freelaw-purple"
-    }
-  ]
-
-  const allCards = [
-    ...stats,
-    ...qualityMetrics.map(m => ({
-      number: `${m.percentage}%`,
-      label: m.label,
-      description: m.description,
-      icon: TrendingUp,
-      isPercentage: true,
-      percentage: m.percentage
-    })),
+      icon: CheckCircle,
+      number: "87%",
+      label: "Aprovados de primeira",
+      description: "Sem revisão ou substituição"
+    },
     {
+      icon: TrendingUp,
       number: "5",
       label: "Notas baixas a cada 100",
-      description: "Apenas 5% têm notas 1 e 2",
-      icon: CheckCircle
+      description: "Apenas 5% têm notas 1 e 2"
     }
   ]
 
@@ -76,87 +49,109 @@ export function Page10Section() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 italic">
-            <span className="text-white">"Tenho receio da </span>
-            <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
-              qualidade...
-            </span>
-            <span className="text-white">"</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 italic text-white">
+            &ldquo;Tenho receio da qualidade...&rdquo;
           </h2>
           <p className="text-xl text-freelaw-textDim">
             Os números falam por si
           </p>
         </motion.div>
 
-        {/* Vertical Layout */}
-        <div className="relative max-w-md mx-auto">
-          {/* Cards stacked vertically */}
-          <div className="relative space-y-6">
-            {allCards.map((card, index) => {
-              const Icon = card.icon
-              const hasNext = index < allCards.length - 1
+        {/* Funnel Section - Centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col items-center mb-16"
+        >
+          {/* Funnel visualization */}
+          <div className="relative w-full max-w-md">
+            {/* Top - 11.000 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center mb-4"
+            >
+              <div className="text-5xl font-bold text-freelaw-purpleLight">
+                11.000
+              </div>
+              <div className="text-sm text-white/90 mt-1">Advogados cadastrados</div>
+            </motion.div>
 
-              return (
-                <div key={index} className="relative flex flex-col items-center">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
-                    className="relative p-4 rounded-lg bg-gradient-to-br from-freelaw-purple/20 to-freelaw-purpleLight/20 border border-freelaw-purpleLight/40 w-[240px]"
-                  >
-                    <div className="flex justify-center mb-2">
-                      <div className="w-8 h-8 rounded-full bg-freelaw-purpleLight/20 flex items-center justify-center">
-                        <Icon className="w-4 h-4 text-freelaw-purpleLight" />
-                      </div>
-                    </div>
+            {/* Funnel stages */}
+            <div className="flex flex-col items-center gap-3 mb-4">
+              {funnelStages.map((stage, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scaleX: 0 }}
+                  whileInView={{ opacity: 1, scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
+                  className="relative"
+                  style={{ width: stage.width }}
+                >
+                  <div className={`h-16 bg-gradient-to-r ${stage.gradient} rounded-lg flex items-center justify-center border-2 border-white/20 ${stage.glow}`}>
+                    <span className="text-white font-bold text-lg tracking-wide drop-shadow-lg">{stage.label}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
-                    <div className="text-center mb-1">
-                      <span className="text-2xl font-bold text-freelaw-purpleLight">
-                        {card.number}
-                      </span>
-                    </div>
-
-                    {card.isPercentage && (
-                      <div className="mb-2 h-1 bg-white/10 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${card.percentage}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: index * 0.15 + 0.5 }}
-                          className="h-full bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple rounded-full"
-                        />
-                      </div>
-                    )}
-
-                    <h3 className="text-center text-xs font-semibold text-white mb-1">
-                      {card.label}
-                    </h3>
-
-                    <p className="text-center text-[10px] text-freelaw-textDim leading-tight">
-                      {card.description}
-                    </p>
-                  </motion.div>
-
-                  {/* Connector Arrow to next card */}
-                  {hasNext && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
-                      className="my-2 flex flex-col items-center"
-                    >
-                      <div className="w-0.5 h-6 bg-gradient-to-b from-freelaw-purpleLight to-freelaw-purple" />
-                      <svg className="w-4 h-4 text-freelaw-purpleLight -mt-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </motion.div>
-                  )}
-                </div>
-              )
-            })}
+            {/* Bottom - 350 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="text-center mt-4"
+            >
+              <div className="text-5xl font-bold text-freelaw-purpleLight">
+                350
+              </div>
+              <div className="text-sm text-white/90 mt-1">Elaborando peças</div>
+            </motion.div>
           </div>
+        </motion.div>
+
+        {/* Bottom Stats Cards - Horizontal */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {bottomCards.map((card, index) => {
+            const Icon = card.icon
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="relative p-6 rounded-xl bg-gradient-to-br from-freelaw-purple/20 to-freelaw-purpleLight/20 border border-freelaw-purpleLight/40"
+              >
+                <div className="flex justify-center mb-3">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight flex items-center justify-center">
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+
+                <div className="text-center mb-2">
+                  <span className="text-4xl font-bold text-freelaw-purpleLight">
+                    {card.number}
+                  </span>
+                </div>
+
+                <h3 className="text-center text-sm font-bold text-white mb-2">
+                  {card.label}
+                </h3>
+
+                <p className="text-center text-xs text-white/70 leading-tight">
+                  {card.description}
+                </p>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

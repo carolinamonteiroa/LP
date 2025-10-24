@@ -2,20 +2,27 @@
 
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
-import { X, Calculator, TrendingDown, TrendingUp } from "lucide-react"
+import { X, Calculator, TrendingDown, TrendingUp, Clock, Shield, Users, Zap, CheckCircle2, AlertTriangle } from "lucide-react"
 import { UF, STATES, SALARIOS } from "@/lib/salaryData"
 
 const CUSTO_HORA_GERENTE = 25
 const PECAS_MES_MEDIA = 10
 const HORAS_POR_PECA_MEDIA = 0.5
 
-// Planos Freelaw
+// Custos invisíveis
+const ENCARGOS_TRABALHISTAS = 0.36 // 36% (INSS, FGTS, férias, 13º)
+const BENEFICIOS_MENSAIS = 600 // VT, VR, plano de saúde (média)
+const CUSTO_INFRAESTRUTURA = 200 // Computador, software, espaço (depreciado)
+const CUSTO_TURNOVER_ANO = 2000 // Custo médio anual de rotatividade
+const CUSTO_TURNOVER_MES = CUSTO_TURNOVER_ANO / 12
+
+// Planos Freelaw com dados de produtividade
 const PLANOS_FREELAW = {
-  iniciacao: { nome: 'Iniciação', valor: 1090 },
-  controle: { nome: 'Controle', valor: 1690 },
-  otimizacao: { nome: 'Otimização', valor: 2090 },
-  escala: { nome: 'Escala', valor: 2590 },
-  corporativo: { nome: 'Corporativo', valor: 4990 }
+  iniciacao: { nome: 'Iniciação', valor: 1090, pecasMes: 5, custoMedioPeca: 218 },
+  controle: { nome: 'Controle', valor: 1690, pecasMes: 10, custoMedioPeca: 169 },
+  otimizacao: { nome: 'Otimização', valor: 2090, pecasMes: 20, custoMedioPeca: 105 },
+  escala: { nome: 'Escala', valor: 2590, pecasMes: 40, custoMedioPeca: 65 },
+  corporativo: { nome: 'Corporativo', valor: 4990, pecasMes: 100, custoMedioPeca: 49 }
 } as const
 
 type PlanoKey = keyof typeof PLANOS_FREELAW
@@ -39,35 +46,59 @@ export function Page12Section() {
     }).format(value)
   }
 
-  // Cálculos Estagiário (usando médias fixas)
+  // Cálculos Estagiário (com TODOS os custos reais)
   const calcEstagiario = () => {
-    const salario = getSalario(selectedUF, 'estagiario')
+    const salarioBase = getSalario(selectedUF, 'estagiario')
+    const encargos = salarioBase * ENCARGOS_TRABALHISTAS
+    const beneficios = BENEFICIOS_MENSAIS
+    const infraestrutura = CUSTO_INFRAESTRUTURA
+    const turnover = CUSTO_TURNOVER_MES
     const treinamento = 20 * CUSTO_HORA_GERENTE
     const revisao = PECAS_MES_MEDIA * HORAS_POR_PECA_MEDIA * CUSTO_HORA_GERENTE
     const selecao = 5 * CUSTO_HORA_GERENTE
 
+    const custoTotal = salarioBase + encargos + beneficios + infraestrutura + turnover
+
     return {
-      salario,
+      salarioBase,
+      encargos,
+      beneficios,
+      infraestrutura,
+      turnover,
       treinamento,
       revisao,
       selecao,
-      mes1: salario + treinamento + revisao + selecao,
-      recorrente: salario + treinamento + revisao
+      custoTotal,
+      mes1: custoTotal + treinamento + revisao + selecao,
+      recorrente: custoTotal + treinamento + revisao,
+      horasGestao: 20 + 5 + (PECAS_MES_MEDIA * HORAS_POR_PECA_MEDIA) // Treinamento + Seleção + Revisão
     }
   }
 
-  // Cálculos Advogado (usando médias fixas)
+  // Cálculos Advogado (com TODOS os custos reais)
   const calcAdvogado = () => {
-    const salario = getSalario(selectedUF, 'advogado')
+    const salarioBase = getSalario(selectedUF, 'advogado')
+    const encargos = salarioBase * ENCARGOS_TRABALHISTAS
+    const beneficios = BENEFICIOS_MENSAIS
+    const infraestrutura = CUSTO_INFRAESTRUTURA
+    const turnover = CUSTO_TURNOVER_MES
     const revisao = PECAS_MES_MEDIA * HORAS_POR_PECA_MEDIA * 0.5 * CUSTO_HORA_GERENTE
     const selecao = 5 * CUSTO_HORA_GERENTE
 
+    const custoTotal = salarioBase + encargos + beneficios + infraestrutura + turnover
+
     return {
-      salario,
+      salarioBase,
+      encargos,
+      beneficios,
+      infraestrutura,
+      turnover,
       revisao,
       selecao,
-      mes1: salario + revisao + selecao,
-      recorrente: salario + revisao
+      custoTotal,
+      mes1: custoTotal + revisao + selecao,
+      recorrente: custoTotal + revisao,
+      horasGestao: 5 + (PECAS_MES_MEDIA * HORAS_POR_PECA_MEDIA * 0.5) // Seleção + Revisão parcial
     }
   }
 
@@ -212,25 +243,45 @@ export function Page12Section() {
               <div className="grid lg:grid-cols-2 gap-6">
                 {/* Advogado Card - LEFT */}
                 <div className="bg-white/5 border border-orange-400/30 rounded-2xl p-6 space-y-4">
-                  <h4 className="text-2xl font-bold text-orange-400">Contratação Interna – Advogado/Associado</h4>
+                  <h4 className="text-2xl font-bold text-orange-400 flex items-center gap-2">
+                    <Users className="w-6 h-6" />
+                    Contratação Interna – Advogado
+                  </h4>
 
                   <div className="space-y-3">
-                    <div className="text-freelaw-textDim text-sm space-y-1">
-                      <p className="font-semibold text-white">Faixa salarial júnior: R$ 2.200 a R$ 4.500</p>
-                      <p>• Salário base (média júnior): {formatBRL(advogado.salario)}</p>
-                      <p>• Revisão 50% das peças (média: {PECAS_MES_MEDIA} × {HORAS_POR_PECA_MEDIA}h × 0.5 × R$ 25/h): {formatBRL(advogado.revisao)}</p>
-                      <p>• Processo seletivo (5h × R$ 25/h): {formatBRL(advogado.selecao)} <span className="text-yellow-400">(apenas Mês 1)</span></p>
-                      <p className="text-yellow-300">⚠️ Possível demanda trabalhista</p>
+                    <div className="text-freelaw-textDim text-sm space-y-1.5">
+                      <p className="font-semibold text-white mb-2">💰 Custos Diretos:</p>
+                      <p>• Salário base (júnior): {formatBRL(advogado.salarioBase)}</p>
+
+                      <p className="font-semibold text-yellow-300 mt-3 mb-2">🔍 Custos Invisíveis:</p>
+                      <p>• Encargos trabalhistas (36%): {formatBRL(advogado.encargos)}</p>
+                      <p>• Benefícios (VT, VR, plano): {formatBRL(advogado.beneficios)}</p>
+                      <p>• Infraestrutura (PC, software): {formatBRL(advogado.infraestrutura)}</p>
+                      <p>• Custo de turnover (médio): {formatBRL(advogado.turnover)}</p>
+
+                      <p className="font-semibold text-white mt-3 mb-2">⏱️ Gestão & Operação:</p>
+                      <p>• Revisão 50% das peças: {formatBRL(advogado.revisao)}</p>
+                      <p>• Processo seletivo (5h): {formatBRL(advogado.selecao)} <span className="text-yellow-400">(Mês 1)</span></p>
+                      <p className="text-red-300 mt-2 flex items-start gap-2">
+                        <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span>Risco trabalhista + vínculo empregatício</span>
+                      </p>
                     </div>
 
                     <div className="border-t border-white/20 pt-3 space-y-2">
                       <div>
-                        <p className="text-xs text-freelaw-textDim uppercase mb-1">NO MÍNIMO - Mês 1 (com seleção)</p>
+                        <p className="text-xs text-freelaw-textDim uppercase mb-1">CUSTO REAL - Mês 1</p>
                         <p className="text-2xl font-bold text-white">{formatBRL(advogado.mes1)}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-freelaw-textDim uppercase mb-1">NO MÍNIMO - Recorrente</p>
-                        <p className="text-2xl font-bold text-white">{formatBRL(advogado.recorrente)}</p>
+                        <p className="text-xs text-freelaw-textDim uppercase mb-1">CUSTO REAL - Recorrente</p>
+                        <p className="text-2xl font-bold text-orange-400">{formatBRL(advogado.recorrente)}</p>
+                      </div>
+                      <div className="bg-orange-500/10 p-2 rounded mt-2">
+                        <p className="text-xs text-orange-300">
+                          <Clock className="w-3 h-3 inline mr-1" />
+                          {advogado.horasGestao.toFixed(1)}h/mês de gestão necessária
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -238,26 +289,46 @@ export function Page12Section() {
 
                 {/* Estagiário Card - RIGHT */}
                 <div className="bg-white/5 border border-red-400/30 rounded-2xl p-6 space-y-4">
-                  <h4 className="text-2xl font-bold text-red-400">Contratação Interna – Estagiário</h4>
+                  <h4 className="text-2xl font-bold text-red-400 flex items-center gap-2">
+                    <Users className="w-6 h-6" />
+                    Contratação Interna – Estagiário
+                  </h4>
 
                   <div className="space-y-3">
-                    <div className="text-freelaw-textDim text-sm space-y-1">
-                      <p className="font-semibold text-white">Faixa salarial média: R$ 750 a R$ 1.200</p>
-                      <p>• Salário base (média): {formatBRL(estagiario.salario)}</p>
-                      <p>• Treinamento (20h × R$ 25/h): {formatBRL(estagiario.treinamento)}</p>
-                      <p>• Revisão 100% das peças (média: {PECAS_MES_MEDIA} × {HORAS_POR_PECA_MEDIA}h × R$ 25/h): {formatBRL(estagiario.revisao)}</p>
-                      <p>• Processo seletivo (5h × R$ 25/h): {formatBRL(estagiario.selecao)} <span className="text-yellow-400">(apenas Mês 1)</span></p>
-                      <p className="text-yellow-300">⚠️ Possível demanda trabalhista</p>
+                    <div className="text-freelaw-textDim text-sm space-y-1.5">
+                      <p className="font-semibold text-white mb-2">💰 Custos Diretos:</p>
+                      <p>• Salário base: {formatBRL(estagiario.salarioBase)}</p>
+
+                      <p className="font-semibold text-yellow-300 mt-3 mb-2">🔍 Custos Invisíveis:</p>
+                      <p>• Encargos trabalhistas (36%): {formatBRL(estagiario.encargos)}</p>
+                      <p>• Benefícios (VT, VR, plano): {formatBRL(estagiario.beneficios)}</p>
+                      <p>• Infraestrutura (PC, software): {formatBRL(estagiario.infraestrutura)}</p>
+                      <p>• Custo de turnover (médio): {formatBRL(estagiario.turnover)}</p>
+
+                      <p className="font-semibold text-white mt-3 mb-2">⏱️ Gestão & Operação:</p>
+                      <p>• Treinamento mensal (20h): {formatBRL(estagiario.treinamento)}</p>
+                      <p>• Revisão 100% das peças: {formatBRL(estagiario.revisao)}</p>
+                      <p>• Processo seletivo (5h): {formatBRL(estagiario.selecao)} <span className="text-yellow-400">(Mês 1)</span></p>
+                      <p className="text-red-300 mt-2 flex items-start gap-2">
+                        <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span>Risco trabalhista + necessidade de supervisão constante</span>
+                      </p>
                     </div>
 
                     <div className="border-t border-white/20 pt-3 space-y-2">
                       <div>
-                        <p className="text-xs text-freelaw-textDim uppercase mb-1">NO MÍNIMO - Mês 1 (com seleção)</p>
+                        <p className="text-xs text-freelaw-textDim uppercase mb-1">CUSTO REAL - Mês 1</p>
                         <p className="text-2xl font-bold text-white">{formatBRL(estagiario.mes1)}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-freelaw-textDim uppercase mb-1">NO MÍNIMO - Recorrente</p>
-                        <p className="text-2xl font-bold text-white">{formatBRL(estagiario.recorrente)}</p>
+                        <p className="text-xs text-freelaw-textDim uppercase mb-1">CUSTO REAL - Recorrente</p>
+                        <p className="text-2xl font-bold text-red-400">{formatBRL(estagiario.recorrente)}</p>
+                      </div>
+                      <div className="bg-red-500/10 p-2 rounded mt-2">
+                        <p className="text-xs text-red-300">
+                          <Clock className="w-3 h-3 inline mr-1" />
+                          {estagiario.horasGestao.toFixed(1)}h/mês de gestão necessária
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -265,66 +336,137 @@ export function Page12Section() {
               </div>
 
               {/* Freelaw Comparison Card */}
-              <div className="bg-gradient-to-br from-freelaw-purple/20 to-freelaw-purpleLight/20 border-2 border-freelaw-purpleLight rounded-2xl p-6 space-y-4">
-                <h4 className="text-2xl font-bold text-freelaw-purpleLight flex items-center gap-2">
+              <div className="bg-gradient-to-br from-freelaw-purple/20 to-freelaw-purpleLight/20 border-2 border-freelaw-purpleLight rounded-2xl p-6 space-y-6">
+                <h4 className="text-2xl font-bold text-freelaw-purpleLight flex items-center gap-2 flex-wrap">
+                  <Zap className="w-6 h-6" />
                   Freelaw - Plano {PLANOS_FREELAW[planoSelecionado].nome}
-                  {valorPlano < estagiario.recorrente && (
-                    <span className="text-sm px-3 py-1 bg-green-500 text-white rounded-full">
-                      Economia imediata
+                  {valorPlano < estagiario.recorrente && valorPlano < advogado.recorrente && (
+                    <span className="text-sm px-3 py-1 bg-green-500 text-white rounded-full flex items-center gap-1">
+                      <TrendingDown className="w-4 h-4" />
+                      Economia garantida
                     </span>
                   )}
                 </h4>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* Custo Mensal + Custo por Peça */}
+                <div className="grid md:grid-cols-3 gap-4 bg-white/5 p-4 rounded-xl">
                   <div>
-                    <p className="text-white font-semibold mb-2">Valor do plano mensal</p>
-                    <p className="text-3xl font-bold text-freelaw-purpleLight">{formatBRL(valorPlano)}</p>
+                    <p className="text-freelaw-textDim text-sm mb-1">💰 Investimento Mensal</p>
+                    <p className="text-2xl font-bold text-white">{formatBRL(valorPlano)}</p>
+                  </div>
+                  <div>
+                    <p className="text-freelaw-textDim text-sm mb-1">📊 Peças por Mês</p>
+                    <p className="text-2xl font-bold text-freelaw-purpleLight">{PLANOS_FREELAW[planoSelecionado].pecasMes}</p>
+                  </div>
+                  <div>
+                    <p className="text-freelaw-textDim text-sm mb-1">📄 Custo Médio/Peça</p>
+                    <p className="text-2xl font-bold text-green-400">{formatBRL(PLANOS_FREELAW[planoSelecionado].custoMedioPeca)}</p>
+                  </div>
+                </div>
+
+                {/* Comparação de Custos */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white/5 p-4 rounded-xl">
+                    <p className="text-sm text-freelaw-textDim mb-2">vs. Estagiário (custo real)</p>
+                    {valorPlano < estagiario.recorrente ? (
+                      <div className="flex items-center gap-2">
+                        <TrendingDown className="w-5 h-5 text-green-400" />
+                        <span className="text-green-400 font-bold">
+                          Economia de {formatBRL(estagiario.recorrente - valorPlano)}/mês
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-sm text-freelaw-textDim">
+                        <p className="text-yellow-300 mb-2">Investimento {formatBRL(valorPlano - estagiario.recorrente)} maior</p>
+                        <p className="text-xs">Mas veja os benefícios exclusivos abaixo ↓</p>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-sm text-freelaw-textDim mb-1">vs. Estagiário (Recorrente)</p>
+                  <div className="bg-white/5 p-4 rounded-xl">
+                    <p className="text-sm text-freelaw-textDim mb-2">vs. Advogado (custo real)</p>
+                    {valorPlano < advogado.recorrente ? (
                       <div className="flex items-center gap-2">
-                        {valorPlano < estagiario.recorrente ? (
-                          <>
-                            <TrendingDown className="w-5 h-5 text-green-400" />
-                            <span className="text-green-400 font-bold">
-                              Economia de {formatBRL(estagiario.recorrente - valorPlano)}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <TrendingUp className="w-5 h-5 text-red-400" />
-                            <span className="text-red-400 font-bold">
-                              +{formatBRL(valorPlano - estagiario.recorrente)}
-                            </span>
-                          </>
-                        )}
+                        <TrendingDown className="w-5 h-5 text-green-400" />
+                        <span className="text-green-400 font-bold">
+                          Economia de {formatBRL(advogado.recorrente - valorPlano)}/mês
+                        </span>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="text-sm text-freelaw-textDim">
+                        <p className="text-yellow-300 mb-2">Investimento {formatBRL(valorPlano - advogado.recorrente)} maior</p>
+                        <p className="text-xs">Mas veja os benefícios exclusivos abaixo ↓</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
 
+                {/* ROI de Tempo */}
+                <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-400/30 p-4 rounded-xl">
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm text-freelaw-textDim mb-1">vs. Advogado (Recorrente)</p>
-                      <div className="flex items-center gap-2">
-                        {valorPlano < advogado.recorrente ? (
-                          <>
-                            <TrendingDown className="w-5 h-5 text-green-400" />
-                            <span className="text-green-400 font-bold">
-                              Economia de {formatBRL(advogado.recorrente - valorPlano)}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <TrendingUp className="w-5 h-5 text-red-400" />
-                            <span className="text-red-400 font-bold">
-                              +{formatBRL(valorPlano - advogado.recorrente)}
-                            </span>
-                          </>
-                        )}
+                      <h5 className="text-white font-bold mb-2">⏱️ ROI de Tempo: Zero Horas de Gestão</h5>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-freelaw-textDim">Estagiário exige:</p>
+                          <p className="text-red-300 font-bold">{estagiario.horasGestao.toFixed(0)}h/mês de gestão</p>
+                        </div>
+                        <div>
+                          <p className="text-freelaw-textDim">Advogado exige:</p>
+                          <p className="text-orange-300 font-bold">{advogado.horasGestao.toFixed(0)}h/mês de gestão</p>
+                        </div>
+                      </div>
+                      <div className="mt-3 bg-green-500/20 p-2 rounded">
+                        <p className="text-green-300 font-bold flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4" />
+                          Com Freelaw: 0h de gestão = {formatBRL((estagiario.horasGestao * CUSTO_HORA_GERENTE))} economizados/mês
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                {/* Card de Valor Agregado - aparece quando Freelaw é mais cara */}
+                {(valorPlano > estagiario.recorrente || valorPlano > advogado.recorrente) && (
+                  <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 border-2 border-purple-400/50 p-5 rounded-xl">
+                    <h5 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                      <Shield className="w-5 h-5 text-purple-400" />
+                      💎 Valor Agregado Exclusivo da Freelaw
+                    </h5>
+                    <div className="grid md:grid-cols-2 gap-3 text-sm">
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-white"><strong>Equipe especializada</strong> de múltiplos advogados</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-white"><strong>Zero risco</strong> trabalhista ou demandas CLT</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-white"><strong>Escalabilidade</strong> instantânea sem contratação</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-white"><strong>Qualidade garantida</strong> sem necessidade de revisão</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-white"><strong>Sem gestão</strong> de pessoas, treinamento ou turnover</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-white"><strong>Tecnologia inclusa:</strong> plataforma + IA + automação</span>
+                      </div>
+                    </div>
+                    <div className="mt-4 bg-purple-500/20 p-3 rounded">
+                      <p className="text-purple-200 text-xs">
+                        💡 <strong>Investimento estratégico:</strong> O custo adicional se paga em produtividade, qualidade e crescimento escalável sem dor de cabeça.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Footer Summary */}

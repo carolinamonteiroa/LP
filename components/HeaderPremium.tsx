@@ -6,11 +6,11 @@ import Image from "next/image"
 
 export function HeaderPremium() {
   const navItems = [
-    { label: "Desafio", href: "#page2" },
-    { label: "Multifunções", href: "#page3" },
+    { label: "Desafio", href: "#page3" },
     { label: "Documentos/Áreas", href: "#page4" },
     { label: "Plataforma", href: "#page5" },
     { label: "Qualidade", href: "#page6" },
+    { label: "Multifunções", href: "#page2" },
     { label: "Volume", href: "#page7" },
     { label: "Cases", href: "#page8" },
     { label: "Planos", href: "#page14" },

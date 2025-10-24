@@ -171,13 +171,6 @@ export function Page8Section() {
                 />
               </motion.div>
             </AnimatePresence>
-
-            {/* Step Info */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-freelaw-purple/90 backdrop-blur-sm px-8 py-3 rounded-full">
-              <span className="text-white font-semibold text-lg">
-                Passo {selectedStep + 1}: {steps[selectedStep].title}
-              </span>
-            </div>
           </div>
         </motion.div>
       </div>
