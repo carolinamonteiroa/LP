@@ -70,7 +70,7 @@ export function Page3Section() {
               <div className="relative rounded-2xl overflow-hidden shadow-glow p-1 bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight">
                 <div className="relative rounded-xl overflow-hidden w-[400px] h-[300px]">
                   <Image
-                    src="/advogado-cansado.png"
+                    src="/advogado-sobrecarga-courtroom.jpg"
                     alt="Advogado sobrecarregado"
                     fill
                     className="object-cover"

@@ -32,10 +32,16 @@ export function Page12Section() {
   const [selectedUF, setSelectedUF] = useState<UF | "">("")
   const [planoSelecionado, setPlanoSelecionado] = useState<PlanoKey>('controle')
 
-  // Função para obter salário por UF ou fallback
-  const getSalario = (uf: UF | "", tipo: 'advogado' | 'estagiario'): number => {
+  // Função para obter faixa salarial por UF ou fallback
+  const getFaixaSalario = (uf: UF | "", tipo: 'advogado' | 'estagiario'): { min: number; max: number } => {
     if (!uf) return SALARIOS.fallback[tipo]
     return SALARIOS[tipo][uf] ?? SALARIOS.fallback[tipo]
+  }
+
+  // Função para calcular média da faixa salarial
+  const getMediaSalario = (uf: UF | "", tipo: 'advogado' | 'estagiario'): number => {
+    const faixa = getFaixaSalario(uf, tipo)
+    return (faixa.min + faixa.max) / 2
   }
 
   // Formatador de moeda BRL
@@ -48,7 +54,8 @@ export function Page12Section() {
 
   // Cálculos Estagiário (com TODOS os custos reais)
   const calcEstagiario = () => {
-    const salarioBase = getSalario(selectedUF, 'estagiario')
+    const salarioBase = getMediaSalario(selectedUF, 'estagiario')
+    const faixaSalarial = getFaixaSalario(selectedUF, 'estagiario')
     const encargos = salarioBase * ENCARGOS_TRABALHISTAS
     const beneficios = BENEFICIOS_MENSAIS
     const infraestrutura = CUSTO_INFRAESTRUTURA
@@ -61,6 +68,7 @@ export function Page12Section() {
 
     return {
       salarioBase,
+      faixaSalarial,
       encargos,
       beneficios,
       infraestrutura,
@@ -77,7 +85,8 @@ export function Page12Section() {
 
   // Cálculos Advogado (com TODOS os custos reais)
   const calcAdvogado = () => {
-    const salarioBase = getSalario(selectedUF, 'advogado')
+    const salarioBase = getMediaSalario(selectedUF, 'advogado')
+    const faixaSalarial = getFaixaSalario(selectedUF, 'advogado')
     const encargos = salarioBase * ENCARGOS_TRABALHISTAS
     const beneficios = BENEFICIOS_MENSAIS
     const infraestrutura = CUSTO_INFRAESTRUTURA
@@ -89,6 +98,7 @@ export function Page12Section() {
 
     return {
       salarioBase,
+      faixaSalarial,
       encargos,
       beneficios,
       infraestrutura,
@@ -251,7 +261,8 @@ export function Page12Section() {
                   <div className="space-y-3">
                     <div className="text-freelaw-textDim text-sm space-y-1.5">
                       <p className="font-semibold text-white mb-2">💰 Custos Diretos:</p>
-                      <p>• Salário base (júnior): {formatBRL(advogado.salarioBase)}</p>
+                      <p>• Salário base (júnior): <span className="text-white/60">De {formatBRL(advogado.faixaSalarial.min)} a {formatBRL(advogado.faixaSalarial.max)}</span></p>
+                      <p className="text-xs text-green-300 ml-4">→ Média utilizada: {formatBRL(advogado.salarioBase)}</p>
 
                       <p className="font-semibold text-yellow-300 mt-3 mb-2">🔍 Custos Invisíveis:</p>
                       <p>• Encargos trabalhistas (36%): {formatBRL(advogado.encargos)}</p>
@@ -297,7 +308,8 @@ export function Page12Section() {
                   <div className="space-y-3">
                     <div className="text-freelaw-textDim text-sm space-y-1.5">
                       <p className="font-semibold text-white mb-2">💰 Custos Diretos:</p>
-                      <p>• Salário base: {formatBRL(estagiario.salarioBase)}</p>
+                      <p>• Salário base: <span className="text-white/60">De {formatBRL(estagiario.faixaSalarial.min)} a {formatBRL(estagiario.faixaSalarial.max)}</span></p>
+                      <p className="text-xs text-green-300 ml-4">→ Média utilizada: {formatBRL(estagiario.salarioBase)}</p>
 
                       <p className="font-semibold text-yellow-300 mt-3 mb-2">🔍 Custos Invisíveis:</p>
                       <p>• Encargos trabalhistas (36%): {formatBRL(estagiario.encargos)}</p>

@@ -100,7 +100,7 @@ export function Page10Section() {
               ))}
             </div>
 
-            {/* Bottom - 350 */}
+            {/* Bottom - 180 */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -109,7 +109,7 @@ export function Page10Section() {
               className="text-center mt-4"
             >
               <div className="text-5xl font-bold text-freelaw-purpleLight">
-                350
+                180
               </div>
               <div className="text-sm text-white/90 mt-1">Elaborando peças</div>
             </motion.div>

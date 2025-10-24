@@ -82,11 +82,12 @@ export function HeroPremium({ clientName = "" }: HeroPremiumProps) {
             <div className="relative rounded-2xl ring-1 ring-white/10 shadow-glow overflow-hidden p-1">
               <div className="relative rounded-xl overflow-hidden aspect-[4/3] lg:aspect-[4/3] bg-gray-900">
                 <Image
-                  src="/hero-advogado.jpg"
-                  alt="Advogado trabalhando ao telefone"
+                  src="/hero-advogado-capa-novo.jpg"
+                  alt="Advogado trabalhando com cliente"
                   fill
                   className="object-cover"
                   priority
+                  quality={100}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>

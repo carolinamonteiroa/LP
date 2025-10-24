@@ -104,7 +104,7 @@ export function Page11Section() {
             {/* Image */}
             <div className="relative w-80 aspect-square rounded-2xl overflow-hidden mx-auto">
               <Image
-                src="/alto-valor.png"
+                src="/advogado-baixo-valor.jpg"
                 alt="Tarefas operacionais"
                 fill
                 className="object-cover"
