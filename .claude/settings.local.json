@@ -17,7 +17,13 @@
       "Bash(dir /b \"C:\\Users\\carol\\Documents\\KR - tri\\Fotos\\Sobrecarga\")",
       "Bash(dir /b \"C:\\Users\\carol\\Documents\\KR - tri\\Fotos\")",
       "Bash(findstr:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(dir:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAtualizar screenshots da plataforma na seção Delegue em 5 minutos\n\n- Substituir imagens 1, 3, 4, 5, 6 e 7 por versões atualizadas\n- Manter imagem 2 (publicações) sem alteração\n- Melhorar visualização do fluxo de delegação\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(ls:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nCriar página de planos de IA com design futurista e criativo\n\n- Dois planos: IA Boost (R$ 300 - 50 peças) e IA Premium (R$ 500 - 100 peças)\n- Design com gradientes vibrantes (rosa/roxo e amarelo/rosa)\n- Animações de partículas flutuantes no background\n- Ícones rotativos e efeitos de glow\n- Badge \"MAIS POPULAR\" no plano premium\n- Seção \"Como funciona?\" com 3 passos\n- Efeitos hover interativos\n- Cores da paleta Freelaw (roxo, rosa, amarelo)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
