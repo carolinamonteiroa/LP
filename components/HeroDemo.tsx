@@ -28,7 +28,7 @@ export function HeroDemo() {
               <span className="text-white">
                 Como transformar
                 <br className="hidden sm:block" />
-                seu escritório em
+                seu escritÃ³rio em
                 <br className="hidden sm:block" />
               </span>
               <span className="bg-gradient-to-r from-white via-freelaw-purpleLight to-brand-secondary bg-clip-text text-transparent">
