@@ -1,256 +1,264 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, ArrowRight, Smartphone, Zap, Link, Check } from "lucide-react"
-import Image from "next/image"
-import { useState } from "react"
+import { Sparkles, Zap, Rocket, Brain, ChevronRight } from "lucide-react"
 
 export function Page15Section() {
-  const [copied, setCopied] = useState(false)
-
-  const handleCopyUrl = async () => {
-    try {
-      await navigator.clipboard.writeText('https://app.freelaw.work/contratante/cadastro')
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error('Falha ao copiar:', err)
+  const aiPlans = [
+    {
+      name: "IA Boost",
+      price: 300,
+      pieces: 50,
+      color: "from-pink-500 to-purple-600",
+      glowColor: "shadow-[0_0_40px_rgba(236,72,153,0.6)]",
+      icon: Sparkles,
+      features: [
+        "50 peças elaboradas por IA",
+        "Entrega em minutos",
+        "Qualidade revisada",
+        "Integração com seu plano atual"
+      ]
+    },
+    {
+      name: "IA Premium",
+      price: 500,
+      pieces: 100,
+      color: "from-yellow-400 to-pink-600",
+      glowColor: "shadow-[0_0_50px_rgba(251,191,36,0.8)]",
+      icon: Rocket,
+      recommended: true,
+      features: [
+        "100 peças elaboradas por IA",
+        "Entrega instantânea",
+        "Qualidade superior",
+        "Prioridade no processamento",
+        "Modelos especializados"
+      ]
     }
-  }
+  ]
+
   return (
     <section
       id="page15"
-      className="min-h-screen bg-gradient-to-br from-freelaw-bg via-purple-900/20 to-freelaw-bg px-4 py-20 relative overflow-hidden flex items-center justify-center"
+      className="min-h-screen bg-freelaw-bg flex items-center justify-center px-4 py-20 relative overflow-hidden"
     >
-      {/* Animated background elements */}
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-heroGradient opacity-30" />
+
+      {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute w-96 h-96 bg-freelaw-purpleLight/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          style={{ top: "10%", left: "10%" }}
-        />
-        <motion.div
-          className="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          style={{ bottom: "10%", right: "10%" }}
-        />
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-freelaw-purpleLight rounded-full opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Question */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-freelaw-purpleLight/20 border border-freelaw-purpleLight/30 rounded-full"
-            >
-              <Sparkles className="w-4 h-4 text-freelaw-purpleLight" />
-              <span className="text-freelaw-purpleLight font-semibold text-sm">
-                Momento de decisão
-              </span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-6xl font-bold leading-tight"
-            >
-              <span className="text-white">Pronto para </span>
-              <span className="bg-gradient-to-r from-freelaw-purpleLight to-purple-400 bg-clip-text text-transparent">
-                revolucionar
-              </span>
-              <br />
-              <span className="text-white">seu escritório?</span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl text-freelaw-textDim leading-relaxed"
-            >
-              Chegou a hora de investir em{" "}
-              <span className="text-freelaw-purpleLight font-semibold">tecnologia</span> e{" "}
-              <span className="text-purple-400 font-semibold">inovação</span> para transformar
-              a forma como você trabalha.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="space-y-4"
-            >
-              {[
-                { icon: Zap, text: "Automação inteligente" },
-                { icon: Sparkles, text: "Mais tempo para o que importa" },
-                { icon: ArrowRight, text: "Crescimento escalável" }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-freelaw-purpleLight to-purple-500 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-white text-lg">{item.text}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Right side - QR Code */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center justify-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              {/* Glowing effect around QR code */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-freelaw-purpleLight to-purple-500 rounded-3xl blur-2xl opacity-50"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-
-              {/* QR Code container */}
-              <div className="relative bg-white p-8 rounded-3xl shadow-2xl">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Image
-                    src="/qrcode-freelaw.png"
-                    alt="QR Code Freelaw"
-                    width={300}
-                    height={300}
-                    className="w-full h-auto"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Instructions */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 text-center space-y-3"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Smartphone className="w-5 h-5 text-freelaw-purpleLight" />
-                <span className="text-freelaw-purpleLight font-semibold">
-                  Escaneie para começar
-                </span>
-              </div>
-
-              <p className="text-freelaw-textDim">
-                Use a câmera do seu celular para acessar<br />
-                <span className="text-white font-semibold">nossa plataforma</span>
-              </p>
-
-              {/* Copy URL Button */}
-              <motion.button
-                onClick={handleCopyUrl}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 px-6 py-3 bg-gradient-to-r from-freelaw-purpleLight to-purple-500 text-white font-semibold rounded-full flex items-center gap-2 mx-auto transition-all duration-300 hover:shadow-lg hover:shadow-freelaw-purpleLight/50"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-5 h-5" />
-                    <span>Link copiado!</span>
-                  </>
-                ) : (
-                  <>
-                    <Link className="w-5 h-5" />
-                    <span>Copiar link desta página</span>
-                  </>
-                )}
-              </motion.button>
-
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="pt-4"
-              >
-                <ArrowRight className="w-6 h-6 text-freelaw-purpleLight mx-auto rotate-90" />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Bottom CTA */}
+      <div className="container relative z-10 mx-auto max-w-7xl">
+        {/* Title Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 text-center"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <p className="text-2xl md:text-3xl font-bold text-white mb-4">
-            O futuro do seu escritório começa agora.
+          <motion.div
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-freelaw-purple/20 to-freelaw-purpleLight/20 border border-freelaw-purpleLight/40 rounded-full mb-6"
+            animate={{
+              boxShadow: [
+                "0 0 20px rgba(167,134,250,0.3)",
+                "0 0 40px rgba(167,134,250,0.6)",
+                "0 0 20px rgba(167,134,250,0.3)",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Brain className="w-5 h-5 text-freelaw-purpleLight" />
+            <span className="text-freelaw-purpleLight font-semibold">Powered by AI</span>
+          </motion.div>
+
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-freelaw-purpleLight bg-clip-text text-transparent">
+              Turbine seu escritório
+            </span>
+            <br />
+            <span className="text-white">com Inteligência Artificial</span>
+          </h2>
+
+          <p className="text-xl md:text-2xl text-freelaw-textDim max-w-3xl mx-auto">
+            Combine o melhor dos dois mundos: advogados especialistas + IA ultrarrápida
           </p>
-          <p className="text-freelaw-textDim text-lg">
-            Junte-se aos escritórios que já estão na vanguarda da advocacia moderna.
-          </p>
+        </motion.div>
+
+        {/* AI Plans Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+          {aiPlans.map((plan, index) => {
+            const Icon = plan.icon
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="relative"
+              >
+                {/* Recommended Badge */}
+                {plan.recommended && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 z-10"
+                  >
+                    <div className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full shadow-xl">
+                      <span className="text-sm font-bold text-black flex items-center gap-1">
+                        <Zap className="w-4 h-4" />
+                        MAIS POPULAR
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+
+                <motion.div
+                  className={`relative p-8 rounded-2xl bg-gradient-to-br ${plan.color} ${plan.glowColor} overflow-hidden`}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Animated gradient overlay */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"
+                    animate={{
+                      opacity: [0.1, 0.3, 0.1],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="flex justify-center mb-6">
+                      <motion.div
+                        className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
+                        animate={{
+                          rotate: [0, 360],
+                        }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      >
+                        <Icon className="w-10 h-10 text-white" />
+                      </motion.div>
+                    </div>
+
+                    {/* Plan Name */}
+                    <h3 className="text-3xl font-bold text-white text-center mb-2">
+                      {plan.name}
+                    </h3>
+
+                    {/* Price */}
+                    <div className="text-center mb-6">
+                      <div className="flex items-center justify-center gap-2 mb-1">
+                        <span className="text-white/80 text-lg">+</span>
+                        <span className="text-5xl font-bold text-white">R$ {plan.price}</span>
+                        <span className="text-white/80 text-lg">/mês</span>
+                      </div>
+                      <p className="text-white/90 text-sm">adicional ao seu plano atual</p>
+                    </div>
+
+                    {/* Pieces */}
+                    <motion.div
+                      className="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-6 text-center"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <div className="text-6xl font-bold text-white mb-2">{plan.pieces}</div>
+                      <div className="text-white text-lg">peças com IA por mês</div>
+                    </motion.div>
+
+                    {/* Features */}
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: i * 0.1 }}
+                          className="flex items-start gap-3 text-white"
+                        >
+                          <ChevronRight className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{feature}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    {/* CTA Button */}
+                    <motion.button
+                      className="w-full py-4 bg-white text-gray-900 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Adicionar ao Plano
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Bottom Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="bg-gradient-to-r from-freelaw-purple/10 to-freelaw-purpleLight/10 border border-freelaw-purpleLight/30 rounded-2xl p-8">
+            <h4 className="text-2xl font-bold text-white text-center mb-4 flex items-center justify-center gap-2">
+              <Sparkles className="w-6 h-6 text-freelaw-purpleLight" />
+              Como funciona?
+            </h4>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="w-12 h-12 rounded-full bg-freelaw-purpleLight text-white font-bold text-xl flex items-center justify-center mx-auto mb-3">
+                  1
+                </div>
+                <p className="text-white text-sm">
+                  Adicione o plano de IA ao seu plano atual
+                </p>
+              </div>
+              <div>
+                <div className="w-12 h-12 rounded-full bg-freelaw-purpleLight text-white font-bold text-xl flex items-center justify-center mx-auto mb-3">
+                  2
+                </div>
+                <p className="text-white text-sm">
+                  Envie suas demandas para elaboração por IA
+                </p>
+              </div>
+              <div>
+                <div className="w-12 h-12 rounded-full bg-freelaw-purpleLight text-white font-bold text-xl flex items-center justify-center mx-auto mb-3">
+                  3
+                </div>
+                <p className="text-white text-sm">
+                  Receba peças elaboradas em minutos com qualidade garantida
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
