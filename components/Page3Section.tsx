@@ -8,13 +8,14 @@ export function Page3Section() {
   const [clickCount, setClickCount] = useState(0)
 
   const phrases = [
-    "Trabalho 12h por dia, mas não acho suficiente.",
-    "Meus finais de semana são dedicados a justificar entregas.",
-    "Temo deixar algo escapar e prejudicar um cliente.",
-    "Sobrecarrego meus advogados, mas sigo comprometido."
+    "Pra mim é normal trabalhar mais de 10 horas por dia",
+    "Geralmente em alguns finais de semana eu preciso fazer algo do trabalho",
+    "Tenho muito medo de perder um prazo",
+    "Além de me sobrecarregar eu carrego a culpa de sobrecarregar quem trabalha comigo",
+    "Minha familia reclama que eu não chego em casa cedo e quando chego não consigo estar 100% presente"
   ]
 
-  const overloadPercentages = [0, 25, 50, 75, 100]
+  const overloadPercentages = [0, 20, 40, 60, 80, 100]
 
   const handleImageClick = () => {
     if (clickCount < phrases.length) {

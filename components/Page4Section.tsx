@@ -9,8 +9,8 @@ export function Page4Section() {
   const challenges = [
     { text: "Sim", rest: ", realmente está difícil encontrar pessoas qualificadas no mercado de trabalho." },
     { text: "Sim", rest: ", realmente não é fácil gerenciar os profissionais da geração Z." },
-    { text: "Sim", rest: ", o mercado está mais competitivo e com muitas mudanças." },
-    { text: "E por último, sim", rest: ", as inovações já são moda." },
+    { text: "Sim", rest: ", hoje com a presença digital meu concorrente pode ser um escritório de outro Estado." },
+    { text: "Sim", rest: ", os advogados que sabem usar tecnologia vão sair na frente." },
   ]
 
   const toggleCard = (index: number) => {

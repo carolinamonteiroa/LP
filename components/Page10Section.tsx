@@ -21,14 +21,14 @@ export function Page10Section() {
     {
       icon: CheckCircle,
       number: "87%",
-      label: "Aprovados de primeira",
+      label: "Peças aprovadas de primeira",
       description: "Sem revisão ou substituição"
     },
     {
       icon: TrendingUp,
-      number: "4",
-      label: "Notas baixas a cada 100",
-      description: "Apenas 4% têm notas 1 e 2"
+      number: "4%",
+      label: "Das peças são avaliadas",
+      description: "Com notas abaixo de 3"
     }
   ]
 

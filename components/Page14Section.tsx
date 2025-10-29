@@ -15,11 +15,7 @@ export function Page14Section() {
       price: 2090,
       description: "Equilíbrio entre volume, orientação inicial e suporte humanizado",
       features: [
-        "Equipe de ~3 advogados remotos",
-        "2 usuários na plataforma",
         "5 peças simultâneas | ~20/mês",
-        "Treinamento gravado",
-        "1 reunião de onboarding com gerente",
         "R$ 105 em média por peça",
         "Adesão: R$ 650"
       ],
@@ -31,11 +27,7 @@ export function Page14Section() {
       price: 2590,
       description: "Perfeito para escritórios em crescimento que querem escalar produção com acompanhamento",
       features: [
-        "Equipe de ~5 advogados remotos",
-        "3 usuários na plataforma",
         "10 peças simultâneas | ~40/mês",
-        "1 treinamento ao vivo (plataforma + boas práticas)",
-        "Reunião mensal (30min) com gerente - métricas",
         "R$ 65 em média por peça",
         "Adesão: R$ 500"
       ],
@@ -48,11 +40,7 @@ export function Page14Section() {
       price: 4990,
       description: "Indicado para parceiros estratégicos com alta demanda e foco em performance contínua",
       features: [
-        "Equipe ilimitada de advogados",
-        "Multiusuários ilimitados",
         "25 peças simultâneas | ~100/mês",
-        "Treinamento ilimitado",
-        "Reuniões quinzenais (30min) - planejamento e KPIs",
         "R$ 49 em média por peça",
         "Adesão: Isento"
       ],
@@ -69,9 +57,7 @@ export function Page14Section() {
       features: [
         "Até 2 peças simultâneas",
         "Média de 5 peças/mês",
-        "1 revisão por peça",
-        "Suporte padrão",
-        "Inteligência Artificial incluída"
+        "Adesão: R$ 1.000"
       ],
       bgColor: "bg-green-500",
       textColor: "text-green-500"
@@ -83,10 +69,7 @@ export function Page14Section() {
       features: [
         "Até 3 peças simultâneas",
         "Média de 10 peças/mês",
-        "Revisão ilimitada",
-        "Suporte prioritário",
-        "Inteligência Artificial incluída",
-        "Relatórios mensais"
+        "Adesão: R$ 850"
       ],
       bgColor: "bg-teal-500",
       textColor: "text-teal-500"
@@ -449,7 +432,7 @@ export function Page14Section() {
             className="text-xs text-white/30 hover:text-white/60 transition-colors flex items-center gap-2 mx-auto"
           >
             <Lock className="w-3 h-3" />
-            {showArchive ? 'Ocultar arquivo' : 'Arquivo'}
+            {showArchive ? 'Ocultar arquivo 2024' : 'Arquivo 2024'}
           </button>
         </div>
 
