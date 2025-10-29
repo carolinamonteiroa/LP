@@ -46,8 +46,8 @@ function PremiumPageContent() {
       <Page11Section />
       <Page13Section />
       <Page14Section />
-      <Page12Section />
       <Page15Section />
+      <Page12Section />
     </div>
   )
 }

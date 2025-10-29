@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, Zap, Rocket, Brain, ChevronRight } from "lucide-react"
+import { Sparkles, Zap, Rocket, Brain } from "lucide-react"
 
 export function Page15Section() {
   const aiPlans = [
@@ -11,13 +11,7 @@ export function Page15Section() {
       pieces: 50,
       color: "from-pink-500 to-purple-600",
       glowColor: "shadow-[0_0_40px_rgba(236,72,153,0.6)]",
-      icon: Sparkles,
-      features: [
-        "50 peças elaboradas por IA",
-        "Entrega em minutos",
-        "Qualidade revisada",
-        "Integração com seu plano atual"
-      ]
+      icon: Sparkles
     },
     {
       name: "IA Premium",
@@ -26,14 +20,7 @@ export function Page15Section() {
       color: "from-yellow-400 to-pink-600",
       glowColor: "shadow-[0_0_50px_rgba(251,191,36,0.8)]",
       icon: Rocket,
-      recommended: true,
-      features: [
-        "100 peças elaboradas por IA",
-        "Entrega instantânea",
-        "Qualidade superior",
-        "Prioridade no processamento",
-        "Modelos especializados"
-      ]
+      recommended: true
     }
   ]
 
@@ -180,86 +167,18 @@ export function Page15Section() {
 
                     {/* Pieces */}
                     <motion.div
-                      className="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-6 text-center"
+                      className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-center"
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="text-6xl font-bold text-white mb-2">{plan.pieces}</div>
                       <div className="text-white text-lg">peças com IA por mês</div>
                     </motion.div>
-
-                    {/* Features */}
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, i) => (
-                        <motion.li
-                          key={i}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.3, delay: i * 0.1 }}
-                          className="flex items-start gap-3 text-white"
-                        >
-                          <ChevronRight className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm">{feature}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-
-                    {/* CTA Button */}
-                    <motion.button
-                      className="w-full py-4 bg-white text-gray-900 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Adicionar ao Plano
-                    </motion.button>
                   </div>
                 </motion.div>
               </motion.div>
             )
           })}
         </div>
-
-        {/* Bottom Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="bg-gradient-to-r from-freelaw-purple/10 to-freelaw-purpleLight/10 border border-freelaw-purpleLight/30 rounded-2xl p-8">
-            <h4 className="text-2xl font-bold text-white text-center mb-4 flex items-center justify-center gap-2">
-              <Sparkles className="w-6 h-6 text-freelaw-purpleLight" />
-              Como funciona?
-            </h4>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-freelaw-purpleLight text-white font-bold text-xl flex items-center justify-center mx-auto mb-3">
-                  1
-                </div>
-                <p className="text-white text-sm">
-                  Adicione o plano de IA ao seu plano atual
-                </p>
-              </div>
-              <div>
-                <div className="w-12 h-12 rounded-full bg-freelaw-purpleLight text-white font-bold text-xl flex items-center justify-center mx-auto mb-3">
-                  2
-                </div>
-                <p className="text-white text-sm">
-                  Envie suas demandas para elaboração por IA
-                </p>
-              </div>
-              <div>
-                <div className="w-12 h-12 rounded-full bg-freelaw-purpleLight text-white font-bold text-xl flex items-center justify-center mx-auto mb-3">
-                  3
-                </div>
-                <p className="text-white text-sm">
-                  Receba peças elaboradas em minutos com qualidade garantida
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
