@@ -9,16 +9,16 @@ export function Page15Section() {
       name: "IA Boost",
       price: 300,
       pieces: 50,
-      color: "from-freelaw-purple to-freelaw-purpleLight",
-      glowColor: "shadow-[0_0_40px_rgba(118,70,255,0.6)]",
+      color: "from-pink-500 to-purple-600",
+      glowColor: "shadow-[0_0_40px_rgba(236,72,153,0.6)]",
       icon: Sparkles
     },
     {
       name: "IA Premium",
       price: 500,
       pieces: 100,
-      color: "from-freelaw-purpleLight to-freelaw-purple",
-      glowColor: "shadow-[0_0_50px_rgba(167,139,250,0.8)]",
+      color: "from-yellow-400 to-pink-600",
+      glowColor: "shadow-[0_0_50px_rgba(251,191,36,0.8)]",
       icon: Rocket,
       recommended: true
     }
@@ -80,7 +80,7 @@ export function Page15Section() {
           </motion.div>
 
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-freelaw-purple via-freelaw-purpleLight to-white bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-freelaw-purpleLight bg-clip-text text-transparent">
               Turbine seu escritório
             </span>
             <br />
@@ -113,8 +113,8 @@ export function Page15Section() {
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute -top-4 left-1/2 -translate-x-1/2 z-10"
                   >
-                    <div className="px-4 py-2 bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple rounded-full shadow-xl">
-                      <span className="text-sm font-bold text-white flex items-center gap-1">
+                    <div className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full shadow-xl">
+                      <span className="text-sm font-bold text-black flex items-center gap-1">
                         <Zap className="w-4 h-4" />
                         MAIS POPULAR
                       </span>
