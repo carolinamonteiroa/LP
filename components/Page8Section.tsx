@@ -243,7 +243,7 @@ export function Page8Section() {
                     <div className="space-y-4">
                       <div className="bg-white/5 rounded-xl p-6 border border-freelaw-purpleLight/30">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-xl">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight flex items-center justify-center text-white font-bold text-xl">
                             ✓
                           </div>
                           <h4 className="text-xl font-semibold text-white">Prazo Padrão</h4>
@@ -253,19 +253,19 @@ export function Page8Section() {
                         </p>
                       </div>
 
-                      <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-6 border border-orange-500/30">
+                      <div className="bg-gradient-to-r from-pink-500/10 to-yellow-500/10 rounded-xl p-6 border border-pink-500/30">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-xl">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xl">
                             ⚡
                           </div>
                           <h4 className="text-xl font-semibold text-white">Entrega Acelerada</h4>
                         </div>
                         <div className="ml-15 space-y-3">
                           <p className="text-white text-lg">
-                            <span className="font-bold text-orange-400 text-xl">3 dias corridos</span> - Valor adicional*
+                            <span className="font-bold text-pink-400 text-xl">3 dias corridos</span> - Valor adicional*
                           </p>
                           <p className="text-white text-lg">
-                            <span className="font-bold text-red-400 text-xl">2 dias corridos</span> - Valor adicional*
+                            <span className="font-bold text-yellow-400 text-xl">2 dias corridos</span> - Valor adicional*
                           </p>
                           <p className="text-sm text-freelaw-textDim italic mt-4 bg-white/5 p-3 rounded-lg">
                             * O valor da aceleração depende do plano contratado
@@ -316,30 +316,30 @@ export function Page8Section() {
                     <h3 className="text-3xl font-bold text-white mb-6">🔄 Prazos de Revisão e Substituição</h3>
 
                     <div className="grid md:grid-cols-2 gap-4 mb-6">
-                      <div className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30">
+                      <div className="bg-freelaw-purple/10 rounded-xl p-6 border border-freelaw-purpleLight/30">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight flex items-center justify-center text-white font-bold text-xl">
                             ✏️
                           </div>
                           <h4 className="text-xl font-semibold text-white">Revisão</h4>
                         </div>
                         <p className="text-freelaw-textDim text-lg mb-2">
-                          Prazo: <span className="text-2xl font-bold text-blue-400">2 dias corridos</span>
+                          Prazo: <span className="text-2xl font-bold text-freelaw-purpleLight">2 dias corridos</span>
                         </p>
                         <p className="text-sm text-freelaw-textDim">
                           Para ajustes e correções na peça
                         </p>
                       </div>
 
-                      <div className="bg-purple-500/10 rounded-xl p-6 border border-purple-500/30">
+                      <div className="bg-pink-500/10 rounded-xl p-6 border border-pink-500/30">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-xl">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xl">
                             🔄
                           </div>
                           <h4 className="text-xl font-semibold text-white">Substituição</h4>
                         </div>
                         <p className="text-freelaw-textDim text-lg mb-2">
-                          Prazo: <span className="text-2xl font-bold text-purple-400">3 dias corridos</span>
+                          Prazo: <span className="text-2xl font-bold text-pink-400">3 dias corridos</span>
                         </p>
                         <p className="text-sm text-freelaw-textDim">
                           Para troca completa do advogado
@@ -347,9 +347,9 @@ export function Page8Section() {
                       </div>
                     </div>
 
-                    <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30">
+                    <div className="bg-gradient-to-r from-freelaw-purple/10 to-freelaw-purpleLight/10 rounded-xl p-4 border border-freelaw-purpleLight/30">
                       <p className="text-lg text-white text-center">
-                        ✓ Ambos os serviços são <span className="font-bold text-green-400">totalmente gratuitos</span>
+                        ✓ Ambos os serviços são <span className="font-bold text-freelaw-purpleLight">totalmente gratuitos</span>
                       </p>
                     </div>
                   </div>
