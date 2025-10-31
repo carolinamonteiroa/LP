@@ -27,7 +27,11 @@
       "Bash(del \"C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\components\\HeroLP.tsx\")",
       "Bash(taskkill:*)",
       "WebFetch(domain:demo-freelaw-carol.vercel.app)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(git archive:*)",
+      "Bash(tar:*)",
+      "Bash(del nul)",
+      "Bash(git remote set-url:*)"
     ],
     "deny": [],
     "ask": []
