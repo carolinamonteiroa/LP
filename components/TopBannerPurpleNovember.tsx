@@ -28,19 +28,24 @@ export function TopBannerPurpleNovember() {
           <Image
             src="/logo-freelaw-horizontal-branco.png"
             alt="Freelaw"
-            width={120}
-            height={32}
-            className="h-6 md:h-8 w-auto"
+            width={100}
+            height={28}
+            className="h-5 md:h-6 w-auto"
           />
         </div>
 
         {/* Purple November - Centro */}
         <div
           onClick={() => scrollToId("page14")}
-          className="flex-1 flex justify-center items-center gap-2 md:gap-3 cursor-pointer hover:brightness-125 transition-all duration-300"
+          className="flex-1 flex justify-center items-center gap-1 cursor-pointer hover:brightness-125 transition-all duration-300"
           role="button"
           aria-label="Aproveite a Purple November - Clique para ver os planos"
         >
+          {/* Texto introdutório */}
+          <span className="text-gray-400 opacity-60 text-sm md:text-base font-semibold tracking-wide">
+            Aproveite as condições da{" "}
+          </span>
+
           {/* Black November (riscado) */}
           <span className="line-through text-gray-400 opacity-60 text-xs md:text-sm font-semibold uppercase tracking-wide">
             Black November
@@ -49,9 +54,9 @@ export function TopBannerPurpleNovember() {
           {/* Ícone coração roxo */}
           <span className="text-[#B38BFF] text-base md:text-lg">💜</span>
 
-          {/* Purple November (destaque com gradiente) */}
+          {/* Purple Friday (destaque com gradiente) */}
           <span className="bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] text-transparent bg-clip-text text-lg md:text-xl font-bold uppercase tracking-wide drop-shadow-[0_0_10px_rgba(179,139,255,0.5)] animate-blink">
-            Purple November
+            Purple Friday
           </span>
         </div>
 
