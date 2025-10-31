@@ -59,7 +59,7 @@ export function Page3Section() {
           >
             {/* Image with Purple Glow */}
             <motion.div
-              className="relative mb-6"
+              className="relative mb-6 mt-10"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-glow p-1 bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight">
                 <div className="relative rounded-xl overflow-hidden w-[400px] h-[300px]">
@@ -94,7 +94,7 @@ export function Page3Section() {
           </motion.div>
 
           {/* Right Column - Phrases */}
-          <div className="space-y-4">
+          <div className="space-y-4 mt-10">
             {/* Header */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
