@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 // ============================================================================
 // CONSTANTES DE CONTEÚDO
@@ -12,7 +13,10 @@ const CONTENT = {
     highlight: "operação jurídica",
     end: ", mais inteligente e escalável."
   },
-  subheadline: "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar documentos artesanais e inteligentes, unindo precisão e agilidade em cada entrega.",
+  subheadline: [
+    "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar",
+    "documentos artesanais e inteligentes, unindo precisão e agilidade em cada entrega."
+  ],
   supportLines: [
     "Documentos feitos com cuidado humano quando o caso exige.",
     "Inteligência artificial quando o tempo é essencial."
@@ -40,11 +44,28 @@ export function scrollToId(id: string) {
 
 export default function HeroFreelaw() {
   return (
-    <section id="hero" className="relative min-h-[92vh] bg-gradient-to-b from-[#0B0217] to-[#1B1230] text-white overflow-hidden pt-12">
-      {/* Container principal */}
-      <div className="mx-auto max-w-7xl px-6 py-20 pt-32 lg:pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Coluna esquerda - Texto */}
+    <section id="hero" className="relative h-screen bg-freelaw-bg text-white overflow-hidden pt-12 flex items-center">
+      {/* Imagem de fundo do lado direito - Ocupa metade da largura e toda a altura */}
+      <div className="absolute right-0 top-0 w-1/2 h-full">
+        <Image
+          src="/reuniao-cliente.png"
+          alt="Reunião com cliente"
+          fill
+          className="object-cover object-center"
+        />
+
+        {/* Gradient overlay para transparência */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: `
+            linear-gradient(to right, rgba(11, 2, 23, 0.95) 0%, rgba(11, 2, 23, 0.7) 40%, rgba(11, 2, 23, 0.5) 100%),
+            linear-gradient(to bottom, rgba(11, 2, 23, 0.5) 0%, rgba(11, 2, 23, 0.3) 50%, rgba(11, 2, 23, 0.5) 100%)
+          `
+        }} />
+      </div>
+
+      {/* Container principal - Texto */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 w-full">
+        <div className="max-w-2xl">
           <div className="space-y-8 animate-fade-in-up">
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
@@ -54,53 +75,19 @@ export default function HeroFreelaw() {
             </h1>
 
             {/* Subheadline */}
-            <p className="mt-6 text-lg md:text-xl text-[#D8D8E3] max-w-2xl leading-relaxed">
-              {CONTENT.subheadline}
-            </p>
+            <div className="mt-6 text-lg md:text-xl text-[#D8D8E3] leading-relaxed space-y-2">
+              {CONTENT.subheadline.map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </div>
 
             {/* Frases de apoio */}
-            <div className="mt-6 space-y-1 text-base md:text-lg text-[#D8D8E3]">
+            <div className="mt-8 space-y-1 text-base md:text-lg text-[#D8D8E3]">
               {CONTENT.supportLines.map((line, index) => (
                 <p key={index} className="leading-relaxed">
                   {line}
                 </p>
               ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              {/* Botão primário */}
-              <button
-                onClick={() => scrollToId('#page14')}
-                aria-label="Conhecer os planos da Freelaw"
-                className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] rounded-xl px-6 py-3 font-semibold shadow-lg hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
-              >
-                {CONTENT.ctas.primary}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-
-              {/* Botão secundário */}
-              <button
-                onClick={() => scrollToId('#page3')}
-                aria-label="Ver como funciona a Freelaw"
-                className="inline-flex items-center gap-2 border border-[#C1A4FF] text-[#C1A4FF] rounded-xl px-6 py-3 font-semibold hover:bg-white/5 transition-all duration-200"
-              >
-                {CONTENT.ctas.secondary}
-              </button>
-            </div>
-          </div>
-
-          {/* Coluna direita - Visual */}
-          <div className="relative">
-            <div className="relative aspect-video rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_40px_rgba(193,164,255,0.25)]">
-              {/* YouTube Video */}
-              <iframe
-                src="https://www.youtube.com/embed/ZFcn85POjtA"
-                title="Freelaw - Vídeo de apresentação"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
             </div>
           </div>
         </div>

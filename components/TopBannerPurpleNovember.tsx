@@ -54,9 +54,9 @@ export function TopBannerPurpleNovember() {
           {/* Ícone coração roxo */}
           <span className="text-[#B38BFF] text-base md:text-lg">💜</span>
 
-          {/* Purple Friday (destaque com gradiente) */}
-          <span className="bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] text-transparent bg-clip-text text-lg md:text-xl font-bold uppercase tracking-wide drop-shadow-[0_0_10px_rgba(179,139,255,0.5)] animate-blink">
-            Purple Friday
+          {/* Purple November (destaque com gradiente) */}
+          <span className="bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] text-transparent bg-clip-text text-xl md:text-2xl font-bold uppercase tracking-wide drop-shadow-[0_0_10px_rgba(179,139,255,0.5)] animate-blink">
+            Purple November
           </span>
         </div>
 
