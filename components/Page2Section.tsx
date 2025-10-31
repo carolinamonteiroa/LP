@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, FileText, Users, Radio } from "lucide-react"
+import { Calendar, FileText, Users, Radio, Mail } from "lucide-react"
 
 export function Page2Section() {
   const stats = [
@@ -27,7 +27,15 @@ export function Page2Section() {
       icon: Radio,
       number: "100k",
       title: "Ouvintes no podcast",
-      description: "maior podcast de inovação jurídica do Brasil"
+      description: "(maior podcast do Brasil sobre tecnologia e inovação)",
+      link: "https://www.youtube.com/@Freelaw"
+    },
+    {
+      icon: Mail,
+      number: "",
+      title: "Newsletter semanal",
+      description: "(Gratuita)",
+      link: "#newsletter"
     }
   ]
 
@@ -49,8 +57,8 @@ export function Page2Section() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
           >
-            Criar uma advocacia mais<br />
-            humana, justa e eficiente
+            Foi da dor da advocacia que surgiu uma nova forma de trabalhar:{" "}
+            <span className="text-freelaw-purpleLight">a Freelaw</span>.
           </motion.h2>
 
           <motion.p
@@ -60,7 +68,7 @@ export function Page2Section() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-freelaw-textDim max-w-3xl mx-auto"
           >
-            Por trás dos números, tem propósito: que move a Freelaw todos os dias.
+            Nosso propósito é criar uma advocacia mais humana, justa e eficiente.
           </motion.p>
         </div>
 
@@ -70,9 +78,9 @@ export function Page2Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -87,12 +95,29 @@ export function Page2Section() {
                     <stat.icon className="w-7 h-7 text-freelaw-purpleLight" />
                   </div>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-freelaw-purpleLight mb-2">
-                  {stat.number}
-                </div>
+                {stat.number && (
+                  <div className="text-4xl md:text-5xl font-bold text-freelaw-purpleLight mb-2">
+                    {stat.number}
+                  </div>
+                )}
                 <div className="text-lg font-semibold text-white mb-2">
                   {stat.title}
                 </div>
+                {stat.description && (
+                  <div className="text-sm text-freelaw-textDim mb-2">
+                    {stat.description}
+                  </div>
+                )}
+                {stat.link && (
+                  <a
+                    href={stat.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-freelaw-purpleLight hover:text-white transition-colors underline"
+                  >
+                    clique aqui para conhecer
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>

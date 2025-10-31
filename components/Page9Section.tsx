@@ -7,10 +7,10 @@ export function Page9Section() {
   return (
     <section
       id="page9"
-      className="min-h-screen bg-freelaw-bg flex items-center justify-center px-4 py-20 relative overflow-hidden"
+      className="h-screen bg-freelaw-bg flex items-center justify-center px-4 relative overflow-hidden"
     >
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-heroGradient opacity-40" />
+      <div className="absolute inset-0 bg-heroGradient opacity-50" />
 
       {/* Image with transparency - Right side */}
       <motion.div
@@ -33,24 +33,24 @@ export function Page9Section() {
       {/* Gradient overlay from left to right */}
       <div className="absolute inset-0 bg-gradient-to-r from-freelaw-bg via-freelaw-bg/80 to-transparent" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             {/* Main Question */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-2xl md:text-3xl text-freelaw-textDim italic"
+                className="text-xl md:text-2xl text-freelaw-textDim italic"
               >
                 &ldquo;Estou com receio...&rdquo;
               </motion.p>
@@ -60,7 +60,7 @@ export function Page9Section() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-4xl md:text-6xl lg:text-6xl font-bold leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
               >
                 <span className="text-white">Como saber se a </span>
                 <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
@@ -90,7 +90,7 @@ export function Page9Section() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl text-freelaw-textDim leading-relaxed max-w-xl"
+              className="text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-xl"
             >
               É natural ter dúvidas antes de delegar algo tão importante quanto o seu trabalho jurídico.
             </motion.p>

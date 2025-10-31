@@ -2,11 +2,12 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Briefcase, Users, TrendingUp, DollarSign, Heart } from "lucide-react"
 
 export function Page6Section() {
   const [visibleCount, setVisibleCount] = useState(0)
+  const [isInView, setIsInView] = useState(false)
 
   const skills = [
     {
@@ -45,24 +46,34 @@ export function Page6Section() {
     }
   }
 
-  const radius = 200 // Distance from center
+  const radius = 180 // Distance from center
+
+  useEffect(() => {
+    if (isInView && visibleCount < skills.length) {
+      const timer = setTimeout(() => {
+        setVisibleCount(prev => prev + 1)
+      }, 800) // Cada item aparece após 0.8 segundos
+
+      return () => clearTimeout(timer)
+    }
+  }, [isInView, visibleCount, skills.length])
 
   return (
     <section
       id="page6"
-      className="min-h-screen bg-gradient-to-b from-freelaw-bg via-[#2a1f3d] to-freelaw-bg flex items-center justify-center px-4 py-20 relative overflow-hidden"
+      className="h-screen bg-gradient-to-b from-freelaw-bg via-[#2a1f3d] to-freelaw-bg flex items-center justify-center relative overflow-hidden"
     >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-heroGradient opacity-30" />
 
-      <div className="container relative z-10 mx-auto max-w-6xl">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-20 text-white"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 text-white"
         >
           <span className="relative inline-block">
             Não basta
@@ -77,23 +88,17 @@ export function Page6Section() {
         </motion.h2>
 
         {/* Central Interactive Circle */}
-        <div className="relative flex items-center justify-center min-h-[700px]">
+        <div className="relative flex items-center justify-center min-h-[600px]">
           {/* Central Logo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="absolute z-20 cursor-pointer"
-            onClick={() => {
-              if (visibleCount < skills.length) {
-                setVisibleCount(visibleCount + 1)
-              }
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            onViewportEnter={() => setIsInView(true)}
+            className="absolute z-20"
           >
-            <div className="relative w-32 h-32 md:w-40 md:h-40">
+            <div className="relative w-28 h-28 md:w-32 md:h-32">
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-freelaw-purple to-freelaw-purpleLight opacity-50 blur-xl animate-pulse" />
 
@@ -155,7 +160,7 @@ export function Page6Section() {
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ duration: 0.4 }}
-                      className="absolute w-40 h-0.5 bg-gradient-to-r from-freelaw-purpleLight/50 to-transparent"
+                      className="absolute w-32 h-0.5 bg-gradient-to-r from-freelaw-purpleLight/50 to-transparent"
                       style={{
                         left: '50%',
                         top: '50%',
@@ -168,16 +173,16 @@ export function Page6Section() {
                     <div className="relative">
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-freelaw-purple/30 to-freelaw-purpleLight/30 blur-lg" />
 
-                      <div className="relative bg-freelaw-bg/90 backdrop-blur-sm border-2 border-freelaw-purpleLight/40 rounded-2xl p-6 w-48 hover:border-freelaw-purpleLight hover:shadow-glow transition-all duration-300">
+                      <div className="relative bg-freelaw-bg/90 backdrop-blur-sm border-2 border-freelaw-purpleLight/40 rounded-xl p-4 w-40 hover:border-freelaw-purpleLight hover:shadow-glow transition-all duration-300">
                         {/* Icon */}
-                        <div className="flex justify-center mb-3">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-white" />
+                        <div className="flex justify-center mb-2">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-white" />
                           </div>
                         </div>
 
                         {/* Text */}
-                        <p className="text-white text-center text-sm leading-relaxed font-medium">
+                        <p className="text-white text-center text-xs leading-relaxed font-medium">
                           {skill.text}
                         </p>
                       </div>

@@ -78,7 +78,7 @@ export function Page13Section() {
   return (
     <section
       id="page13"
-      className="min-h-screen bg-gradient-to-br from-black via-[#0a0010] to-black flex items-start justify-center px-4 pt-12 pb-20 relative overflow-hidden"
+      className="h-screen bg-gradient-to-br from-black via-[#0a0010] to-black flex items-center justify-center px-4 relative overflow-hidden"
     >
       {/* Strong radial glow from center */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#A986D1_0%,_#6B3C9B_30%,_transparent_60%)] opacity-40" />
@@ -92,14 +92,14 @@ export function Page13Section() {
         backgroundSize: '50px 50px'
       }} />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="container relative z-10 mx-auto max-w-7xl h-full flex flex-col items-center justify-center gap-4">
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl lg:text-6xl font-bold mb-8 text-center px-4"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center px-4 flex-shrink-0"
         >
           <span className="bg-gradient-to-r from-white via-freelaw-purpleLight to-white bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(169,134,209,0.8)]">
             Alguns dos nossos 5 mil clientes dizem..
@@ -107,14 +107,14 @@ export function Page13Section() {
         </motion.h2>
 
         {/* Orbital Animation Container */}
-        <div className="relative w-full max-w-4xl mx-auto aspect-square flex items-center justify-center">
+        <div className="relative w-full max-w-2xl h-[500px] flex items-center justify-center flex-shrink-0">
           {/* Center Logo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="absolute z-20 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
+            className="absolute z-20 w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
           >
             <div className="relative w-full h-full rounded-full bg-gradient-to-br from-freelaw-purple to-freelaw-purpleLight backdrop-blur-sm border-4 border-white/30 shadow-[0_0_80px_rgba(169,134,209,1),0_0_120px_rgba(107,60,155,0.6)] flex items-center justify-center">
               <div className="absolute inset-0 rounded-full bg-white/10 animate-pulse"></div>
@@ -122,14 +122,14 @@ export function Page13Section() {
                 src="/Logotipo/Ícone-colorido.png"
                 alt="Freelaw"
                 fill
-                className="object-contain p-6 relative z-10"
+                className="object-contain p-5 relative z-10"
               />
             </div>
           </motion.div>
 
           {/* Orbiting Cases */}
           {cases.map((clientCase, index) => {
-            const radius = 250 // Distance from center
+            const radius = 180 // Distance from center
 
             // Function to calculate positions for full orbit
             const getOrbitPath = (startAngle: number) => {
@@ -177,7 +177,7 @@ export function Page13Section() {
                 onClick={() => setSelectedCase(clientCase)}
                 whileHover={{ scale: 1.1 }}
               >
-                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-4 border-freelaw-purpleLight shadow-[0_0_25px_rgba(169,134,209,0.8),0_0_40px_rgba(107,60,155,0.4)] hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,1),0_0_60px_rgba(169,134,209,0.8)] transition-all duration-300">
+                <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-4 border-freelaw-purpleLight shadow-[0_0_25px_rgba(169,134,209,0.8),0_0_40px_rgba(107,60,155,0.4)] hover:border-white hover:shadow-[0_0_40px_rgba(255,255,255,1),0_0_60px_rgba(169,134,209,0.8)] transition-all duration-300">
                   <Image
                     src={clientCase.photo}
                     alt={clientCase.name}
@@ -189,6 +189,17 @@ export function Page13Section() {
             )
           })}
         </div>
+
+        {/* Legend */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center text-white/70 text-sm md:text-base italic flex-shrink-0"
+        >
+          Clique na foto para ver o depoimento
+        </motion.p>
       </div>
 
       {/* Testimonial Modal */}

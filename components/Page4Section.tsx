@@ -20,19 +20,29 @@ export function Page4Section() {
   }
 
   return (
-    <section id="page3" className="min-h-screen bg-freelaw-bg flex items-center justify-center px-4 py-20 relative overflow-hidden">
+    <section id="page3" className="h-screen bg-freelaw-bg flex items-center justify-center relative overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-heroGradient opacity-50" />
-      <div className="container relative z-10 mx-auto max-w-4xl">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4"
         >
           Escalar na advocacia tem suas dificuldades
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-sm text-freelaw-textDim text-center mb-16"
+        >
+          É difícil sair dos 100 processos e chegar nos 500, nós sabemos
+        </motion.p>
 
         <div className="space-y-6 mb-12">
           {challenges.map((challenge, index) => {

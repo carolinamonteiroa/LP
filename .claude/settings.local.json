@@ -23,7 +23,11 @@
       "Bash(git push)",
       "Bash(ls:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nCriar página de planos de IA com design futurista e criativo\n\n- Dois planos: IA Boost (R$ 300 - 50 peças) e IA Premium (R$ 500 - 100 peças)\n- Design com gradientes vibrantes (rosa/roxo e amarelo/rosa)\n- Animações de partículas flutuantes no background\n- Ícones rotativos e efeitos de glow\n- Badge \"MAIS POPULAR\" no plano premium\n- Seção \"Como funciona?\" com 3 passos\n- Efeitos hover interativos\n- Cores da paleta Freelaw (roxo, rosa, amarelo)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(del \"C:\\Users\\carol\\Documents\\Demo-Freelaw-Carol\\components\\HeroLP.tsx\")",
+      "Bash(taskkill:*)",
+      "WebFetch(domain:demo-freelaw-carol.vercel.app)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []

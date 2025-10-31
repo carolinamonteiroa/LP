@@ -134,13 +134,13 @@ export function Page12Section() {
   return (
     <section
       id="page12"
-      className="min-h-screen bg-freelaw-bg flex items-center justify-center px-4 py-20 relative overflow-hidden"
+      className="h-screen bg-freelaw-bg flex items-center justify-center px-4 py-12 relative overflow-hidden"
     >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-heroGradient opacity-30" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 mx-auto max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left - Title */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -148,15 +148,15 @@ export function Page12Section() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Não sabe se vale <span className="whitespace-nowrap">a pena o <span className="text-freelaw-purpleLight">investimento?</span></span>
             </h2>
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-gradient-to-r from-freelaw-purple to-freelaw-purpleLight text-white font-bold text-lg rounded-full hover:shadow-glow transition-all duration-300 hover:scale-105 flex items-center gap-3"
+              className="px-6 py-3 bg-gradient-to-r from-freelaw-purple to-freelaw-purpleLight text-white font-bold text-base rounded-full hover:shadow-glow transition-all duration-300 hover:scale-105 flex items-center gap-2"
             >
-              <Calculator className="w-6 h-6" />
+              <Calculator className="w-5 h-5" />
               Selecionar estado e calcular
             </button>
           </motion.div>
@@ -167,9 +167,9 @@ export function Page12Section() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white/5 border border-freelaw-purpleLight/30 rounded-2xl p-6 ml-auto max-w-md"
+            className="bg-white/5 border border-freelaw-purpleLight/30 rounded-2xl p-5 ml-auto max-w-md"
           >
-            <p className="text-lg md:text-xl text-freelaw-textDim leading-relaxed">
+            <p className="text-base md:text-lg text-freelaw-textDim leading-relaxed">
               Em 80% dos estados esse valor é{" "}
               <span className="text-freelaw-purpleLight font-bold">em dobro!</span>
               <br />
