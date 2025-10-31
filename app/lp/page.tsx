@@ -1,7 +1,7 @@
 "use client"
 
-import { HeaderPremium } from "@/components/HeaderPremium"
-import { HeroDemo } from "@/components/HeroDemo"
+import { Header } from "@/components/Header"
+import { HeroLP } from "@/components/HeroLP"
 import { Page2Section } from "@/components/Page2Section"
 import { Page3Section } from "@/components/Page3Section"
 import { Page4Section } from "@/components/Page4Section"
@@ -18,12 +18,14 @@ import { Page14Section } from "@/components/Page14Section"
 import { Page14bSection } from "@/components/Page14bSection"
 import { Page15Section } from "@/components/Page15Section"
 import { Page16Section } from "@/components/Page16Section"
+import { Footer } from "@/components/Footer"
+import demoContent from "@/content/demo.json"
 
 export default function DemoPage() {
   return (
     <div className="min-h-screen bg-freelaw-bg">
-      <HeaderPremium />
-      <HeroDemo />
+      <Header />
+      <HeroLP />
       <Page3Section />
       <Page4Section />
       <Page5Section />
@@ -40,6 +42,7 @@ export default function DemoPage() {
       <Page15Section />
       <Page12Section />
       <Page16Section />
+      <Footer content={demoContent.footer} />
     </div>
   )
 }
