@@ -21,7 +21,6 @@ const CONTENT = {
     primary: "Quero conhecer os planos",
     secondary: "Ver como funciona"
   },
-  compliance: "A IA é um recurso integrado aos planos Freelaw — não é vendida separadamente.",
   badge: {
     oldText: "Black November",
     newText: "Purple November",
@@ -112,11 +111,6 @@ export default function HeroFreelaw() {
                 {CONTENT.ctas.secondary}
               </button>
             </div>
-
-            {/* Microcopy de compliance */}
-            <p className="mt-4 text-sm text-[#B2B2C3] max-w-lg">
-              {CONTENT.compliance}
-            </p>
           </div>
 
           {/* Coluna direita - Visual */}
