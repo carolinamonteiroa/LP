@@ -48,7 +48,7 @@ export default function HeroFreelaw() {
     <section className="relative min-h-[92vh] bg-gradient-to-b from-[#0B0217] to-[#1B1230] text-white overflow-hidden">
       {/* Selo Purple November - Canto superior esquerdo */}
       <button
-        onClick={() => scrollToId('#page12')}
+        onClick={() => scrollToId('#page14')}
         role="button"
         aria-label={CONTENT.badge.ariaLabel}
         className="absolute left-6 top-6 z-20 flex items-center text-sm cursor-pointer transition-all duration-300 hover:scale-105"
@@ -94,7 +94,7 @@ export default function HeroFreelaw() {
             <div className="mt-10 flex flex-wrap items-center gap-3">
               {/* Botão primário */}
               <button
-                onClick={() => scrollToId('#page12')}
+                onClick={() => scrollToId('#page14')}
                 aria-label="Conhecer os planos da Freelaw"
                 className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] rounded-xl px-6 py-3 font-semibold shadow-lg hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
               >
