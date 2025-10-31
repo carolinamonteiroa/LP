@@ -1,5 +1,6 @@
 "use client"
 
+import { TopBannerPurpleNovember } from "@/components/TopBannerPurpleNovember"
 import { HeaderPremium } from "@/components/HeaderPremium"
 import HeroFreelaw from "@/components/HeroFreelaw"
 import { Page2Section } from "@/components/Page2Section"
@@ -22,6 +23,7 @@ import { Page16Section } from "@/components/Page16Section"
 export default function DemoPage() {
   return (
     <div className="min-h-screen bg-freelaw-bg">
+      <TopBannerPurpleNovember />
       <HeaderPremium />
       <HeroFreelaw />
       <Page3Section />
