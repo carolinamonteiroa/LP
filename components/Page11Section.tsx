@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { CheckCircle, XCircle } from "lucide-react"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page11Section() {
   const highValueActivities = [
@@ -134,6 +135,8 @@ export function Page11Section() {
             </div>
           </motion.div>
         </div>
+
+        <NextSectionArrow targetId="page13" />
       </div>
     </section>
   )

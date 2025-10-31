@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useState, useRef } from "react"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page5Section() {
   const [followers, setFollowers] = useState(1)
@@ -113,6 +114,8 @@ export function Page5Section() {
             </div>
           </motion.div>
         </div>
+
+        <NextSectionArrow targetId="page6" />
       </div>
     </section>
   )

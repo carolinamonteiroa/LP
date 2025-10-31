@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page9Section() {
   return (
@@ -99,6 +100,8 @@ export function Page9Section() {
           {/* Right Column - Empty space for image (image is in background) */}
           <div className="hidden lg:block" />
         </div>
+
+        <NextSectionArrow targetId="page10" />
       </div>
     </section>
   )

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Calendar, FileText, Users, Radio, Mail } from "lucide-react"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page2Section() {
   const stats = [
@@ -122,6 +123,8 @@ export function Page2Section() {
             ))}
           </div>
         </motion.div>
+
+        <NextSectionArrow targetId="page7" />
       </div>
     </section>
   )

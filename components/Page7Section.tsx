@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page7Section() {
   const documentTypes = [
@@ -141,6 +142,8 @@ export function Page7Section() {
             </motion.div>
           </div>
         </motion.div>
+
+        <NextSectionArrow targetId="page8" />
       </div>
     </section>
   )

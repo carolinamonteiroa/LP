@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowRight } from "lucide-react"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 // ============================================================================
 // CONSTANTES DE CONTEÚDO
@@ -105,6 +106,9 @@ export default function HeroFreelaw() {
           </div>
         </div>
       </div>
+
+      {/* Setinha para próxima seção */}
+      <NextSectionArrow targetId="page3" />
 
       {/* CSS animations inline */}
       <style jsx>{`

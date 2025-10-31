@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Sparkles, Zap, Rocket, Brain } from "lucide-react"
+import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page15Section() {
   const aiPlans = [
@@ -190,6 +191,8 @@ export function Page15Section() {
             )
           })}
         </div>
+
+        <NextSectionArrow targetId="page12" />
       </div>
     </section>
   )
