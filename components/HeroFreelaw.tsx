@@ -104,7 +104,7 @@ export default function HeroFreelaw() {
 
               {/* Botão secundário */}
               <button
-                onClick={() => scrollToId('#page2')}
+                onClick={() => scrollToId('#page3')}
                 aria-label="Ver como funciona a Freelaw"
                 className="inline-flex items-center gap-2 border border-[#C1A4FF] text-[#C1A4FF] rounded-xl px-6 py-3 font-semibold hover:bg-white/5 transition-all duration-200"
               >
