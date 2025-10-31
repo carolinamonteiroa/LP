@@ -15,13 +15,13 @@ export function NextSectionArrow({ targetId }: NextSectionArrowProps) {
   }
 
   return (
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+    <div className="absolute bottom-8 right-8 z-10">
       <button
         onClick={scrollToSection}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 animate-bounce"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white/40 hover:bg-white/20 hover:text-white/60 transition-all duration-300"
         aria-label="Ir para próxima seção"
       >
-        <ChevronDown className="w-6 h-6" />
+        <ChevronDown className="w-5 h-5" />
       </button>
     </div>
   )

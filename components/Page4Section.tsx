@@ -21,7 +21,7 @@ export function Page4Section() {
   }
 
   return (
-    <section id="page3" className="h-screen bg-freelaw-bg flex items-center justify-center relative overflow-hidden">
+    <section id="page4" className="h-screen bg-freelaw-bg flex items-center justify-center relative overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-heroGradient opacity-50" />
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
