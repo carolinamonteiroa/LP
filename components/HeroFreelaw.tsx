@@ -14,7 +14,7 @@ const CONTENT = {
   },
   subheadline: "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar documentos artesanais e inteligentes, unindo precisão e agilidade em cada entrega.",
   supportLines: [
-    "Peças artesanais quando o caso exige profundidade.",
+    "Documentos feitos com cuidado humano quando o caso exige.",
     "Inteligência artificial quando o tempo é essencial."
   ],
   ctas: {
