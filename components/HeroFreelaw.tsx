@@ -20,11 +20,6 @@ const CONTENT = {
   ctas: {
     primary: "Quero conhecer os planos",
     secondary: "Ver como funciona"
-  },
-  badge: {
-    oldText: "Black November",
-    newText: "Purple November",
-    ariaLabel: "Aproveite a Purple November"
   }
 }
 
@@ -45,25 +40,7 @@ export function scrollToId(id: string) {
 
 export default function HeroFreelaw() {
   return (
-    <section className="relative min-h-[92vh] bg-gradient-to-b from-[#0B0217] to-[#1B1230] text-white overflow-hidden">
-      {/* Selo Purple November - Canto superior esquerdo */}
-      <button
-        onClick={() => scrollToId('#page14')}
-        role="button"
-        aria-label={CONTENT.badge.ariaLabel}
-        className="absolute left-6 top-6 z-20 flex items-center text-sm cursor-pointer transition-all duration-300 hover:scale-105"
-      >
-        {/* Black November (riscado) */}
-        <span className="line-through opacity-50 mr-2 text-[#D8D8E3]">
-          {CONTENT.badge.oldText}
-        </span>
-
-        {/* Purple November (destaque) */}
-        <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] text-white font-semibold shadow-[0_0_20px_rgba(179,139,255,0.35)] hover:shadow-[0_0_30px_rgba(179,139,255,0.5)] transition-shadow">
-          {CONTENT.badge.newText}
-        </span>
-      </button>
-
+    <section className="relative min-h-[92vh] bg-gradient-to-b from-[#0B0217] to-[#1B1230] text-white overflow-hidden pt-12">
       {/* Container principal */}
       <div className="mx-auto max-w-7xl px-6 py-20 pt-32 lg:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
