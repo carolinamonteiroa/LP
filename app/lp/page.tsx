@@ -1,7 +1,7 @@
 "use client"
 
 import { HeaderPremium } from "@/components/HeaderPremium"
-import { HeroLP } from "@/components/HeroLP"
+import HeroFreelaw from "@/components/HeroFreelaw"
 import { Page2Section } from "@/components/Page2Section"
 import { Page3Section } from "@/components/Page3Section"
 import { Page4Section } from "@/components/Page4Section"
@@ -23,7 +23,7 @@ export default function DemoPage() {
   return (
     <div className="min-h-screen bg-freelaw-bg">
       <HeaderPremium />
-      <HeroLP />
+      <HeroFreelaw />
       <Page3Section />
       <Page4Section />
       <Page5Section />
