@@ -8,9 +8,9 @@ import { ArrowRight } from "lucide-react"
 
 const CONTENT = {
   headline: {
-    start: "Transforme seu escritório em uma ",
-    highlight: "operação jurídica inteligente",
-    end: " e escalável."
+    start: "Sua ",
+    highlight: "operação jurídica",
+    end: ", mais inteligente e escalável."
   },
   subheadline: "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar documentos artesanais e inteligentes, unindo precisão e agilidade em cada entrega.",
   supportLines: [
