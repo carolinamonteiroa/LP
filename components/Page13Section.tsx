@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 import { X } from "lucide-react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 interface Case {
   id: number
@@ -259,7 +258,6 @@ export function Page13Section() {
         )}
       </AnimatePresence>
 
-      <NextSectionArrow targetId="page14" />
     </section>
   )
 }

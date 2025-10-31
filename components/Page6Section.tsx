@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Briefcase, Users, TrendingUp, DollarSign, Heart } from "lucide-react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page6Section() {
   const [visibleCount, setVisibleCount] = useState(0)
@@ -195,7 +194,6 @@ export function Page6Section() {
           </AnimatePresence>
         </div>
 
-        <NextSectionArrow targetId="page2" />
       </div>
     </section>
   )

@@ -1,7 +1,6 @@
 "use client"
 
 import { ArrowRight } from "lucide-react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 // ============================================================================
 // CONSTANTES DE CONTEÚDO
@@ -41,7 +40,7 @@ export function scrollToId(id: string) {
 
 export default function HeroFreelaw() {
   return (
-    <section className="relative min-h-[92vh] bg-gradient-to-b from-[#0B0217] to-[#1B1230] text-white overflow-hidden pt-12">
+    <section id="hero" className="relative min-h-[92vh] bg-gradient-to-b from-[#0B0217] to-[#1B1230] text-white overflow-hidden pt-12">
       {/* Container principal */}
       <div className="mx-auto max-w-7xl px-6 py-20 pt-32 lg:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -107,8 +106,6 @@ export default function HeroFreelaw() {
         </div>
       </div>
 
-      {/* Setinha para próxima seção */}
-      <NextSectionArrow targetId="page3" />
 
       {/* CSS animations inline */}
       <style jsx>{`

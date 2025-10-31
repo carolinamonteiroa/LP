@@ -2,6 +2,7 @@
 
 import { TopBannerPurpleNovember } from "@/components/TopBannerPurpleNovember"
 import HeroFreelaw from "@/components/HeroFreelaw"
+import { ScrollToNextSection } from "@/components/ScrollToNextSection"
 import { Page2Section } from "@/components/Page2Section"
 import { Page3Section } from "@/components/Page3Section"
 import { Page4Section } from "@/components/Page4Section"
@@ -23,6 +24,7 @@ export default function DemoPage() {
   return (
     <div className="min-h-screen bg-freelaw-bg">
       <TopBannerPurpleNovember />
+      <ScrollToNextSection />
       <HeroFreelaw />
       <Page3Section />
       <Page4Section />

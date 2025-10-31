@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page3Section() {
   const [currentPhrase, setCurrentPhrase] = useState(0)
@@ -130,8 +129,6 @@ export function Page3Section() {
         </div>
       </div>
 
-      {/* Setinha para próxima seção */}
-      <NextSectionArrow targetId="page4" />
     </section>
   )
 }

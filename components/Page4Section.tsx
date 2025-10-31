@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page4Section() {
   const [selectedCards, setSelectedCards] = useState<number[]>([])
@@ -89,7 +88,6 @@ export function Page4Section() {
           })}
         </div>
 
-        <NextSectionArrow targetId="page5" />
       </div>
     </section>
   )

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page9Section() {
   return (
@@ -101,7 +100,6 @@ export function Page9Section() {
           <div className="hidden lg:block" />
         </div>
 
-        <NextSectionArrow targetId="page10" />
       </div>
     </section>
   )

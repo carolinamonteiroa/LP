@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { X, Calculator, TrendingDown, TrendingUp, Clock, Shield, Users, Zap, CheckCircle2, AlertTriangle } from "lucide-react"
 import { UF, STATES, SALARIOS } from "@/lib/salaryData"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 const CUSTO_HORA_GERENTE = 25
 const PECAS_MES_MEDIA = 10
@@ -508,7 +507,6 @@ export function Page12Section() {
         </div>
       )}
 
-      <NextSectionArrow targetId="page16" />
     </section>
   )
 }

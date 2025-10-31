@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { CheckCircle, Users, TrendingUp } from "lucide-react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page10Section() {
   const funnelStages = [
@@ -212,7 +211,6 @@ export function Page10Section() {
           </div>
         </div>
 
-        <NextSectionArrow targetId="page11" />
       </div>
     </section>
   )

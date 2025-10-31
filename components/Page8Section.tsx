@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 import { Check, X, UserPlus } from "lucide-react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page8Section() {
   const [selectedStep, setSelectedStep] = useState(0)
@@ -713,7 +712,6 @@ export function Page8Section() {
           </AnimatePresence>
         </motion.div>
 
-        <NextSectionArrow targetId="page9" />
       </div>
     </section>
   )

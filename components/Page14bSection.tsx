@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
-import { NextSectionArrow } from "./NextSectionArrow"
 
 export function Page14bSection() {
   const mainPlans = [
@@ -105,7 +104,6 @@ export function Page14bSection() {
           </div>
         </motion.div>
 
-        <NextSectionArrow targetId="page15" />
       </div>
     </section>
   )
