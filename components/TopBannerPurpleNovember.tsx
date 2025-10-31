@@ -26,11 +26,11 @@ export function TopBannerPurpleNovember() {
         {/* Logo Freelaw - Esquerda */}
         <div className="flex-shrink-0">
           <Image
-            src="/logo-freelaw.svg"
+            src="/logo-freelaw-horizontal-branco.png"
             alt="Freelaw"
             width={120}
             height={32}
-            className="h-6 md:h-8 w-auto brightness-0 invert"
+            className="h-6 md:h-8 w-auto"
           />
         </div>
 
