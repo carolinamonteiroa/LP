@@ -9,13 +9,13 @@ import Image from "next/image"
 
 const CONTENT = {
   headline: {
-    start: "Sua ",
-    highlight: "operação jurídica",
-    end: ", mais inteligente e escalável."
+    start: "Sua operação jurídica, mais ",
+    highlight: "inteligente e escalável",
+    end: "."
   },
   subheadline: [
-    "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar",
-    "documentos artesanais e inteligentes, unindo precisão e agilidade em cada entrega."
+    "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar documentos artesanais",
+    "e inteligentes, unindo precisão e agilidade em cada entrega."
   ],
   supportLines: [
     "Documentos feitos com cuidado humano quando o caso exige.",
@@ -44,52 +44,62 @@ export function scrollToId(id: string) {
 
 export default function HeroFreelaw() {
   return (
-    <section id="hero" className="relative h-screen bg-freelaw-bg text-white overflow-hidden pt-12 flex items-center">
-      {/* Imagem de fundo do lado direito - Ocupa metade da largura e toda a altura */}
-      <div className="absolute right-0 top-0 w-1/2 h-full">
-        <Image
-          src="/reuniao-cliente.png"
-          alt="Reunião com cliente"
-          fill
-          className="object-cover object-center"
-        />
+    <section id="hero" className="h-screen bg-freelaw-bg flex items-center justify-center px-4 relative overflow-hidden">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-heroGradient opacity-50" />
 
-        {/* Gradient overlay para transparência */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: `
-            linear-gradient(to right, rgba(11, 2, 23, 0.95) 0%, rgba(11, 2, 23, 0.7) 40%, rgba(11, 2, 23, 0.5) 100%),
-            linear-gradient(to bottom, rgba(11, 2, 23, 0.5) 0%, rgba(11, 2, 23, 0.3) 50%, rgba(11, 2, 23, 0.5) 100%)
-          `
-        }} />
+      {/* Image with transparency - Right side */}
+      <div className="absolute right-0 top-[50%] -translate-y-1/2 w-1/2 h-full">
+        <div className="relative w-full h-full opacity-20">
+          <Image
+            src="/reuniao-cliente.png"
+            alt="Reunião com cliente"
+            fill
+            className="object-cover object-left"
+          />
+        </div>
       </div>
 
-      {/* Container principal - Texto */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 w-full">
-        <div className="max-w-2xl">
-          <div className="space-y-8 animate-fade-in-up">
-            {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-              {CONTENT.headline.start}
-              <span className="text-[#C1A4FF]">{CONTENT.headline.highlight}</span>
-              {CONTENT.headline.end}
-            </h1>
+      {/* Gradient overlay from left to right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-freelaw-bg via-freelaw-bg/80 to-transparent" />
 
-            {/* Subheadline */}
-            <div className="mt-6 text-lg md:text-xl text-[#D8D8E3] leading-relaxed space-y-2">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          {/* Left Column - Text Content */}
+          <div className="space-y-6">
+            {/* Subheadline primeiro */}
+            <div className="text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-xl space-y-2">
               {CONTENT.subheadline.map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>
 
+            {/* Decorative element */}
+            <div className="h-1 w-32 bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple rounded-full" />
+
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="text-white">{CONTENT.headline.start}</span>
+                <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
+                  {CONTENT.headline.highlight}
+                </span>
+                <span className="text-white">{CONTENT.headline.end}</span>
+              </h1>
+            </div>
+
             {/* Frases de apoio */}
-            <div className="mt-8 space-y-1 text-base md:text-lg text-[#D8D8E3]">
+            <div className="space-y-1 text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-xl">
               {CONTENT.supportLines.map((line, index) => (
-                <p key={index} className="leading-relaxed">
+                <p key={index}>
                   {line}
                 </p>
               ))}
             </div>
           </div>
+
+          {/* Right Column - Empty space for image (image is in background) */}
+          <div className="hidden lg:block" />
         </div>
       </div>
 

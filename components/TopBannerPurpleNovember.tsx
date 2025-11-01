@@ -20,7 +20,7 @@ const scrollToId = (id: string) => {
 export function TopBannerPurpleNovember() {
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50 w-full bg-[#0B0217] py-3 md:py-4 border-b border-[#1B1230]"
+      className="fixed top-0 left-0 right-0 z-50 w-full bg-freelaw-bg py-3 md:py-4 border-b border-[#1B1230]"
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center gap-4">
         {/* Logo Freelaw - Esquerda */}
@@ -63,7 +63,7 @@ export function TopBannerPurpleNovember() {
         {/* Botão Contratar - Direita */}
         <button
           onClick={() => scrollToId("page16")}
-          className="flex-shrink-0 bg-gradient-to-r from-[#7B5CFF] to-[#B38BFF] text-white text-xs md:text-sm font-semibold px-4 md:px-6 py-2 md:py-2.5 rounded-lg hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
+          className="flex-shrink-0 border-2 border-freelaw-purpleLight bg-freelaw-purpleLight/10 text-freelaw-purpleLight text-xs md:text-sm font-semibold px-4 md:px-6 py-2 md:py-2.5 rounded-lg hover:bg-freelaw-purpleLight/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
           aria-label="Contratar agora"
         >
           Quero contratar agora
