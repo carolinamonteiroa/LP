@@ -35,7 +35,7 @@ export function Page2Section() {
       number: "",
       title: "Newsletter semanal",
       description: "(Gratuita)",
-      link: "#newsletter"
+      link: "https://freelaw.beehiiv.com/?utm_source=linktree"
     }
   ]
 

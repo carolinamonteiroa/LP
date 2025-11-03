@@ -66,9 +66,9 @@ export default function HeroFreelaw() {
       <div className="container relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 mt-10">
             {/* Subheadline primeiro */}
-            <div className="text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-xl space-y-2">
+            <div className="text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-3xl space-y-2">
               {CONTENT.subheadline.map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
@@ -89,7 +89,7 @@ export default function HeroFreelaw() {
             </div>
 
             {/* Frases de apoio */}
-            <div className="space-y-1 text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-xl">
+            <div className="space-y-1 text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-3xl">
               {CONTENT.supportLines.map((line, index) => (
                 <p key={index}>
                   {line}

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check } from "lucide-react"
+import { Check, MessageCircle } from "lucide-react"
 
 export function Page16Section() {
   const plans = [
@@ -61,6 +61,10 @@ export function Page16Section() {
       // Fallback: ir para página de cadastro
       window.open('https://app.freelaw.work/contratante/cadastro', '_blank')
     }
+  }
+
+  const handleWhatsAppClick = () => {
+    window.open('https://api.whatsapp.com/send/?phone=553140404506&text=Ol%C3%A1%2C%20quero%20fechar%20com%20a%20Freelaw&type=phone_number&app_absent=0&utm_source=Wpp-Amanda&utm_medium=veio-do-site&utm_campaign=wpp-Amanda', '_blank')
   }
 
   return (
@@ -128,39 +132,6 @@ export function Page16Section() {
                         className="absolute inset-0 blur-xl"
                       />
                     </div>
-
-                    {/* Badge Mais Vendido */}
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{
-                        opacity: 1,
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{
-                        opacity: { duration: 0.5 },
-                        scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                      }}
-                      className="absolute top-0 left-1/2 -translate-x-1/2 z-30"
-                    >
-                      <div className="relative px-4 py-2 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-white text-sm font-bold rounded-full shadow-[0_0_40px_rgba(255,69,0,0.8)] border-2 border-yellow-300">
-                        <motion.span
-                          animate={{
-                            textShadow: [
-                              '0 0 20px rgba(255,255,255,0.8)',
-                              '0 0 30px rgba(255,165,0,1)',
-                              '0 0 20px rgba(255,255,255,0.8)'
-                            ]
-                          }}
-                          transition={{
-                            duration: 1.5,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                        >
-                          🔥 MAIS VENDIDO
-                        </motion.span>
-                      </div>
-                    </motion.div>
                   </>
                 )}
 
@@ -196,6 +167,29 @@ export function Page16Section() {
             </motion.div>
           ))}
         </div>
+
+        {/* WhatsApp CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-lg md:text-xl text-white mb-6 max-w-3xl mx-auto">
+            Para fechamento com a condição especial da Purple November, clique no símbolo do WhatsApp que em menos de 5 min nosso consultor vai entrar em contato com você!
+          </p>
+
+          <motion.button
+            onClick={handleWhatsAppClick}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all duration-300"
+          >
+            <MessageCircle className="w-6 h-6" />
+            Falar com Consultor no WhatsApp
+          </motion.button>
+        </motion.div>
 
       </div>
     </section>
