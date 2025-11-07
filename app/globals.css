@@ -141,3 +141,8 @@ html {
   scroll-snap-align: start;
   scroll-snap-stop: normal;
 }
+
+/* Espaço de 1.5cm (~57px) do topo para todas as seções */
+section[id] > div.container {
+  margin-top: 57px !important;
+}

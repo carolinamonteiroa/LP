@@ -37,7 +37,7 @@ export function Page14bSection() {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-heroGradient opacity-30" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="container relative z-10 mx-auto max-w-5xl">
         {/* Comparison Table */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -45,20 +45,20 @@ export function Page14bSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-6">
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-6">
             Compare os planos
           </h3>
 
-          <div className="bg-white/5 border border-freelaw-purpleLight/30 rounded-2xl overflow-hidden">
+          <div className="bg-white/5 border border-freelaw-purpleLight/30 rounded-xl overflow-hidden">
             {/* Header */}
-            <div className="grid grid-cols-4 gap-3 p-4 bg-white/10 border-b border-white/20">
-              <div className="text-white font-semibold text-sm">Recursos</div>
+            <div className="grid grid-cols-4 gap-2 p-3 bg-white/10 border-b border-white/20">
+              <div className="text-white font-semibold text-xs">Recursos</div>
               {mainPlans.map((plan) => (
                 <div key={plan.name} className="text-center">
                   <div className={`inline-block px-2 py-0.5 rounded-full ${plan.bgColor} text-white text-xs font-bold mb-1`}>
                     {plan.name}
                   </div>
-                  <div className="text-lg font-bold text-white">
+                  <div className="text-base font-bold text-white">
                     {formatBRL(plan.price)}
                   </div>
                   <div className="text-[10px] text-freelaw-textDim">/mês</div>
@@ -84,9 +84,9 @@ export function Page14bSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="grid grid-cols-4 gap-3 p-4"
+                  className="grid grid-cols-4 gap-2 p-3"
                 >
-                  <div className="text-white font-medium text-sm">{row.label}</div>
+                  <div className="text-white font-medium text-xs">{row.label}</div>
                   {row.values.map((value, vIndex) => (
                     <div key={vIndex} className="text-center text-freelaw-textDim">
                       {value === "✓" ? (
@@ -94,7 +94,7 @@ export function Page14bSection() {
                       ) : value === "—" ? (
                         <span className="text-white/30">—</span>
                       ) : (
-                        <span className="text-white text-sm">{value}</span>
+                        <span className="text-white text-xs">{value}</span>
                       )}
                     </div>
                   ))}

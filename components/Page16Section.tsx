@@ -64,7 +64,7 @@ export function Page16Section() {
   }
 
   const handleWhatsAppClick = () => {
-    window.open('https://api.whatsapp.com/send/?phone=553140404506&text=Ol%C3%A1%2C%20quero%20fechar%20com%20a%20Freelaw&type=phone_number&app_absent=0&utm_source=Wpp-Amanda&utm_medium=veio-do-site&utm_campaign=wpp-Amanda', '_blank')
+    window.open('https://api.whatsapp.com/send/?phone=553131912314&text=Quero%20conhecer%20as%20condi%C3%A7%C3%B5es%20especiais&type=phone_number&app_absent=0&utm_source=Wpp-Amanda&utm_medium=veio-do-site&utm_campaign=wpp-Amanda', '_blank')
   }
 
   return (
@@ -82,11 +82,9 @@ export function Page16Section() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 leading-tight text-white"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-10 leading-tight text-white"
         >
-          Dê o primeiro passo para
-          <br />
-          revolucionar seu escritório
+          Comece agora
         </motion.h2>
 
         {/* Plan Cards Grid */}
@@ -176,10 +174,6 @@ export function Page16Section() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <p className="text-lg md:text-xl text-white mb-6 max-w-3xl mx-auto">
-            Para fechamento com a condição especial da Purple November, clique no símbolo do WhatsApp que em menos de 5 min nosso consultor vai entrar em contato com você!
-          </p>
-
           <motion.button
             onClick={handleWhatsAppClick}
             whileHover={{ scale: 1.05 }}
@@ -187,8 +181,12 @@ export function Page16Section() {
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all duration-300"
           >
             <MessageCircle className="w-6 h-6" />
-            Falar com Consultor no WhatsApp
+            Quero conhecer as condições da purple november
           </motion.button>
+
+          <p className="text-sm md:text-base text-freelaw-textDim mt-4 max-w-3xl mx-auto">
+            Em menos de 5 min nosso consultor vai responder
+          </p>
         </motion.div>
 
       </div>

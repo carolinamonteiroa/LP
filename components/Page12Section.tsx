@@ -148,7 +148,7 @@ export function Page12Section() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Não sabe se vale <span className="whitespace-nowrap">a pena o <span className="text-freelaw-purpleLight">investimento?</span></span>
             </h2>
 

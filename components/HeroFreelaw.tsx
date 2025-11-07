@@ -8,15 +8,12 @@ import Image from "next/image"
 // ============================================================================
 
 const CONTENT = {
+  topText: "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar documentos artesanais e inteligentes, unindo precisão e agilidade em cada entrega.",
   headline: {
     start: "Sua operação jurídica, mais ",
     highlight: "inteligente e escalável",
     end: "."
   },
-  subheadline: [
-    "A Freelaw conecta seu escritório a advogados da área e tecnologia jurídica para criar documentos artesanais",
-    "e inteligentes, unindo precisão e agilidade em cada entrega."
-  ],
   supportLines: [
     "Documentos feitos com cuidado humano quando o caso exige.",
     "Inteligência artificial quando o tempo é essencial."
@@ -63,24 +60,23 @@ export default function HeroFreelaw() {
       {/* Gradient overlay from left to right */}
       <div className="absolute inset-0 bg-gradient-to-r from-freelaw-bg via-freelaw-bg/80 to-transparent" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-6 mt-10">
-            {/* Subheadline primeiro */}
-            <div className="text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-3xl space-y-2">
-              {CONTENT.subheadline.map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
-            </div>
+          <div className="space-y-6 py-12 lg:py-20">
+            {/* Top Text - Small */}
+            <p className="text-base md:text-lg text-freelaw-textDim leading-relaxed max-w-2xl">
+              {CONTENT.topText}
+            </p>
 
             {/* Decorative element */}
             <div className="h-1 w-32 bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple rounded-full" />
 
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <div className="space-y-2">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                 <span className="text-white">{CONTENT.headline.start}</span>
+                <br />
                 <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
                   {CONTENT.headline.highlight}
                 </span>
@@ -88,8 +84,8 @@ export default function HeroFreelaw() {
               </h1>
             </div>
 
-            {/* Frases de apoio */}
-            <div className="space-y-1 text-lg md:text-xl text-freelaw-textDim leading-relaxed max-w-3xl">
+            {/* Support Lines */}
+            <div className="text-base md:text-lg text-freelaw-textDim leading-relaxed max-w-2xl pt-4">
               {CONTENT.supportLines.map((line, index) => (
                 <p key={index}>
                   {line}

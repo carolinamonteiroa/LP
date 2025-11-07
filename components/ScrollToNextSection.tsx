@@ -15,11 +15,10 @@ const SECTION_IDS = [
   "page9",
   "page10",
   "page11",
+  "page12",
   "page13",
-  "page14",
   "page14b",
   "page15",
-  "page12",
   "page16"
 ]
 

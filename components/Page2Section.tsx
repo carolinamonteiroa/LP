@@ -42,7 +42,7 @@ export function Page2Section() {
   return (
     <section
       id="page2"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-freelaw-bg py-20"
+      className="h-screen bg-freelaw-bg flex items-center justify-center relative overflow-hidden"
     >
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-heroGradient opacity-50" />

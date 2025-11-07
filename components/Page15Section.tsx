@@ -1,24 +1,26 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, Zap, Rocket, Brain } from "lucide-react"
+import { Sparkles, Zap, Rocket } from "lucide-react"
 
 export function Page15Section() {
   const aiPlans = [
     {
       name: "IA Boost",
-      price: 300,
+      price: 240,
+      originalPrice: 300,
       pieces: 50,
-      color: "from-pink-500 to-purple-600",
-      glowColor: "shadow-[0_0_40px_rgba(236,72,153,0.6)]",
+      color: "from-freelaw-purple to-freelaw-purpleLight",
+      glowColor: "shadow-[0_0_30px_rgba(167,134,250,0.4)]",
       icon: Sparkles
     },
     {
       name: "IA Premium",
-      price: 500,
+      price: 400,
+      originalPrice: 500,
       pieces: 100,
-      color: "from-yellow-400 to-pink-600",
-      glowColor: "shadow-[0_0_50px_rgba(251,191,36,0.8)]",
+      color: "from-freelaw-purpleLight to-freelaw-purple",
+      glowColor: "shadow-[0_0_40px_rgba(167,134,250,0.5)]",
       icon: Rocket,
       recommended: true
     }
@@ -64,47 +66,45 @@ export function Page15Section() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-freelaw-purple/20 to-freelaw-purpleLight/20 border border-freelaw-purpleLight/40 rounded-full mb-4"
-            animate={{
-              boxShadow: [
-                "0 0 20px rgba(167,134,250,0.3)",
-                "0 0 40px rgba(167,134,250,0.6)",
-                "0 0 20px rgba(167,134,250,0.3)",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <Brain className="w-4 h-4 text-freelaw-purpleLight" />
-            <span className="text-freelaw-purpleLight font-semibold text-sm">Powered by AI</span>
-          </motion.div>
-
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-freelaw-purpleLight bg-clip-text text-transparent">
-              Turbine seu escritório
-            </span>
+            <span className="text-white">Turbine seu escritório</span>
             <br />
-            <span className="text-white">com Inteligência Artificial</span>
+            <span className="bg-gradient-to-r from-freelaw-purpleLight to-freelaw-purple bg-clip-text text-transparent">
+              com Inteligência Artificial
+            </span>
           </h2>
 
-          <p className="text-base md:text-lg text-freelaw-textDim max-w-3xl mx-auto mb-3">
-            Em alguns casos, delegue a elaboração de peças para nossa IA! Feita por advogados para advogado.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-6"
+          >
+            <div className="inline-flex flex-col items-center gap-2 px-6 py-4 bg-freelaw-purple/30 rounded-2xl border border-freelaw-purpleLight/50 backdrop-blur-sm">
+              <span className="text-freelaw-purpleLight font-bold text-sm md:text-base uppercase tracking-wider">
+                GARANTA OS MELHORES VALORES NA PRÉ-VENDA
+              </span>
+              <span className="text-white font-semibold text-xs md:text-sm">
+                (APENAS EM NOVEMBRO)
+              </span>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center justify-center gap-2 text-xs text-yellow-400 max-w-3xl mx-auto"
+            className="flex items-center justify-center gap-2 text-xs text-freelaw-textDim max-w-3xl mx-auto"
           >
-            <span className="font-semibold">⚠️ Atenção:</span>
+            <span className="font-semibold text-freelaw-purpleLight">⚠️ Atenção:</span>
             <span>A solução de IA é comercializada apenas em conjunto com os planos da Freelaw.</span>
           </motion.div>
         </motion.div>
 
         {/* AI Plans Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {aiPlans.map((plan, index) => {
             const Icon = plan.icon
 
@@ -124,8 +124,8 @@ export function Page15Section() {
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute -top-3 left-1/2 -translate-x-1/2 z-10"
                   >
-                    <div className="px-3 py-1.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full shadow-xl">
-                      <span className="text-xs font-bold text-black flex items-center gap-1">
+                    <div className="px-3 py-1.5 bg-freelaw-purpleLight rounded-full shadow-xl">
+                      <span className="text-xs font-bold text-white flex items-center gap-1">
                         <Zap className="w-3 h-3" />
                         MAIS POPULAR
                       </span>
@@ -134,7 +134,7 @@ export function Page15Section() {
                 )}
 
                 <motion.div
-                  className={`relative p-6 rounded-2xl bg-gradient-to-br ${plan.color} ${plan.glowColor} overflow-hidden`}
+                  className={`relative p-4 rounded-xl bg-gradient-to-br ${plan.color} ${plan.glowColor} overflow-hidden`}
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -149,40 +149,45 @@ export function Page15Section() {
 
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="flex justify-center mb-4">
+                    <div className="flex justify-center mb-3">
                       <motion.div
-                        className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
+                        className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
                         animate={{
                           rotate: [0, 360],
                         }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                       >
-                        <Icon className="w-8 h-8 text-white" />
+                        <Icon className="w-6 h-6 text-white" />
                       </motion.div>
                     </div>
 
                     {/* Plan Name */}
-                    <h3 className="text-2xl font-bold text-white text-center mb-2">
+                    <h3 className="text-xl font-bold text-white text-center mb-2">
                       {plan.name}
                     </h3>
 
                     {/* Price */}
-                    <div className="text-center mb-4">
-                      <div className="flex items-center justify-center gap-2 mb-1">
-                        <span className="text-white/80 text-base">+</span>
-                        <span className="text-4xl font-bold text-white">R$ {plan.price}</span>
-                        <span className="text-white/80 text-base">/mês</span>
+                    <div className="text-center mb-3">
+                      {plan.originalPrice && (
+                        <div className="flex items-center justify-center gap-2 mb-1">
+                          <span className="text-white/50 text-base line-through">De R$ {plan.originalPrice}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center justify-center gap-1 mb-1">
+                        <span className="text-white/80 text-sm">Por apenas +</span>
+                        <span className="text-3xl font-bold text-white">R$ {plan.price}</span>
+                        <span className="text-white/80 text-sm">/mês</span>
                       </div>
                       <p className="text-white/90 text-xs">adicional ao seu plano atual</p>
                     </div>
 
                     {/* Pieces */}
                     <motion.div
-                      className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center"
+                      className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <div className="text-5xl font-bold text-white mb-1">{plan.pieces}</div>
-                      <div className="text-white text-base">peças com IA por mês</div>
+                      <div className="text-3xl font-bold text-white mb-1">{plan.pieces}</div>
+                      <div className="text-white text-sm">peças com IA por mês</div>
                     </motion.div>
                   </div>
                 </motion.div>
